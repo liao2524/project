@@ -89,7 +89,7 @@
 #header .navList li:nth-of-type(1){
 	margin-left: 30px;
 }
-/*#header .allNav_input{
+#header .allNav_input{
 	width: 8px;
 	color: #fff;
 	font-size: 16px;
@@ -97,7 +97,7 @@
 	text-decoration: none；
 	margin: 31px 0px 31px 0; 
 }
-#header .allNav_input img{
+/*#header .allNav_input img{
 	float: right;
 }*/
 /*#header .allNav_list{
