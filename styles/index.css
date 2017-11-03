@@ -1,0 +1,143 @@
+/*头部样式*/
+#header{
+	height: 80px;
+	width: 1366px;
+	background-color: 	#000000;
+
+}
+#header .cotWidth{
+	position: relative;
+    height: 80px;
+    z-index: 100;
+   
+}
+/*头部左边*/
+#header .section_left{
+	width: 470px;
+	/*height: 80px;*/
+
+}
+#header .logo{
+	background-color: 	#000000;
+	float: left;
+	width: 90px;
+	height: 120px;	
+	z-index: 1000; 
+	position: absolute;
+	left: 20px;
+	top: 0; 
+}
+#header .logo_img{
+	height: 70px;
+	padding: 0 28px 0 29px;
+}
+#header .logo_txt{
+	height: 27px;
+	width: 50px;
+	padding:0 20px;
+}
+#header .forumNav{
+	background-color: #000000;
+	height: 80px;
+	width: 459px;
+	float: left;
+	border-right: 1px solid #363636;
+}
+#header .forumNav a{
+	text-decoration: none;
+	position: relative;
+	font-size: 20px;
+	color: #fff;
+    float: right;
+	margin: 25px 30px;
+}
+#header .forumNav a img{
+    position: absolute;
+    left: -20px;
+    top:5px;
+}
+
+
+/*头部中间*/
+#header .section_middle{
+	background-color: #000000;
+	height: 80px;
+	width: 574px;
+	border-right: 1px solid #363636;
+	float: left;
+}
+#header .navList a{
+	color: #363636;
+	float: left;
+	font-size: 16px;
+	font-family: Helvetica,Tahoma,Arial sans-serif;
+	margin: 28px 20px 28px 0;
+	text-decoration: none;
+	
+}
+#header .navList{
+	width: 454px;
+	height: 80px;
+	overflow: hidden;
+
+}
+#header .allNav{
+	width: 120px;	
+	height: 80px;
+	float: left;
+}
+#header .navList li:nth-of-type(1){
+	margin-left: 30px;
+}
+/*#header .allNav_input{
+	width: 8px;
+	color: #fff;
+	font-size: 16px;
+	font-family: Helvetica,Tahoma,Arial sans-serif;
+	text-decoration: none；
+	margin: 31px 0px 31px 0; 
+}
+#header .allNav_input img{
+	float: right;
+}*/
+/*#header .allNav_list{
+	width: 1366px;
+	height: 80px;
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	height: 80px;
+	background-color: #000;
+	width: 1366px;
+	z-index: 100;
+}*/
+/*#header .allNav_list ul{
+	text-align: center;
+}*/
+/*头部右边*/
+#header .section_right{
+	position: relative;
+	background-color: #000000;
+	height: 80px;
+	width: 331px;
+	float: left;
+
+}
+#header .section_right a{
+	font-size: 14px;
+	line-height: 20px;
+	font-family: Helvetica,Tahoma,Arial sans-serif;
+	color: white;
+	float: left;
+	text-decoration: none;
+	margin: 30px 10px;
+}
+/*#header .section_right .search{
+	width: 20px;
+	height: 20px;
+}*/
+#header .section_right div{
+	position: absolute;
+	top: 90px;
+	#ffc71f;
+}
