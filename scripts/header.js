@@ -1,11 +1,11 @@
 // 小图标悬浮换色
 $(function(){
-	$( ".forumNav a").last().hover(function() {
+	$( ".forumNav a").first().hover(function() {
 		$(".logo_curiosity").attr('src', 'images/head_logo_curiosity_hover.png');	
 	}, function() {
 		$(".logo_curiosity").attr('src', 'images/head_logo_curiosity.png');
 	});
-	$( ".forumNav a").first().hover(function() {
+	$( ".forumNav a").last().hover(function() {
 		$(".logo_menu").attr('src', 'images/head_logo_memu_hover.png');	
 	}, function() {
 		$(".logo_menu").attr('src', 'images/head_logo_menu.png');
@@ -59,12 +59,36 @@ $(function(){
 $(function () {
 	$(window).scroll(function() {
 		var scrollTop=$("body").scrollTop();
+		$(".allNav_list").css('display', 'none');
 		if (scrollTop==0) {
+			// $(".logo").animate({
+			// 	height: 120,
+			// 	width: 90},
+			// 	0);
+			$(".logo").animate({
+				height: 120,
+				width: 90},
+				200/*, function() {
+				$(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
+				$(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');	
+			}*/);
 			$("#header").animate({
 				height: 80},
-				200);
+				500);
+			// $(".logo a img").first().toggleClass('logo_img');
+			// $(".logo a img").last().toggleClass('logo_txt');
+			$(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
+			$(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');
 		}else{
 			$("#header").height(60);
+			$(".logo").animate({
+				height: 60,
+				width: 120},
+				500);
+			// $(".logo a img").first().toggleClass('logo_img_small');
+			// $(".logo a img").last().toggleClass('logo_txt_small');
+			$(".logo a img").first().addClass('logo_img_small').removeClass('logo_img');
+			$(".logo a img").last().addClass('logo_txt_small').removeClass('logo_txt');
 		}
 	});
 });
