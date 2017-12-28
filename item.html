@@ -20,10 +20,19 @@
 						<img src="images/qDailyLogoTxt.png" alt="logoContent" class="logo_txt">
 					</a>
 				</div>
-				<div class="forumNav">
-					<a href="#nogo"><img src="images/head_logo_menu.png" class="logo_menu">栏目中心</a>
-					<a href="#nogo"><img src="images/head_logo_curiosity.png" class="logo_curiosity">好奇心研究所</a>
-				</div>
+				<ul class="forumNav">
+					<li>
+						<a href="#nogo"><img src="images/head_logo_curiosity.png" class="logo_curiosity">
+						<span>好奇心研究所</span>
+						</a>
+					</li>
+					<li>
+						<a href="#nogo">
+							<img src="images/head_logo_menu.png" class="logo_menu">
+							<span>栏目中心</span>
+						</a>
+					</li>
+				</ul>
 			</div>
 			<div class="section_middle">
 				<ul class="navList">
@@ -43,18 +52,25 @@
 				</div>
 			</div>
 			<div class="section_right">
-				<a href="#nogo" class="app">APP</a>
-				<a href="#nogo" class="search">搜索</a>
-				<a href="#nogo">关于我们</a>
-				<a href="#nogo">
-					<img class="img_weibo" src="images/head_right_weibo.png" alt="">
-					<img class="img_weixin" src="images/head_right_weixin.png" alt="">
-				</a>
-				<div class="QR_code" style="display: none;">
-					<a href="#nogo"><img src="images/公众号二维码.gif" alt="二维码"></a>
-				</div>		
+				<div class="app">
+					<a href="#nogo">APP</a>
+				</div><!-- 因为要设置dispy为inline-block,  所以要在标签之间做个注释，不然会有空格影响布局
+			 --><div class="search">
+					<a href="#nogo">搜索</a>
+				</div><!-- 
+			 --><!-- <div class="aboutUs">
+					<a href="#nogo">关于我们</a>
+					<a href="#nogo">
+						<img class="img_weibo" src="images/head_right_weibo.png" alt="">
+						<img class="img_weixin" src="images/head_right_weixin.png" alt="">
+					</a>
+					<div class="QR_code">
+						<a href="#nogo"><img src="images/公众号二维码.gif" alt="二维码"></a>
+					</div>
+				</div> -->
+						
 			</div>
-			<div class="allNav_list" style="display: none;">
+			<div class="allNav_list">
 				<ul>
 					<li><img src="images/head_category_list_design.png" alt=""><a href="#nogo">长文章</a></li>
 					<li><img src="images/head_category_list_design.png" alt=""><a href="#nogo">10个圈</a></li>

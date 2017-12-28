@@ -23,7 +23,7 @@ $(function(){
 	$( ".section_right .img_weixin").hover(function() {
 		$(".QR_code").show();	
 	}, function() {
-		$(".QR_code").hide('slow');
+		$(".QR_code").hide();
 	});
 	$( ".QR_code").hover(function() {
 		$(".QR_code").stop(true);	
@@ -61,24 +61,24 @@ $(function () {
 		var scrollTop=$("body").scrollTop();
 		$(".allNav_list").css('display', 'none');
 		if (scrollTop==0) {
-			// $(".logo").animate({
-			// 	height: 120,
-			// 	width: 90},
-			// 	0);
+			// alert(scrollTop);
+			$(".logo").css({
+				height: '120',
+				width: '90'
+			});
 			$(".logo").animate({
 				height: 120,
 				width: 90},
-				200/*, function() {
-				$(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
-				$(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');	
-			}*/);
+				100);
+			$(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
+			$(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');	
 			$("#header").animate({
 				height: 80},
 				500);
 			// $(".logo a img").first().toggleClass('logo_img');
 			// $(".logo a img").last().toggleClass('logo_txt');
-			$(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
-			$(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');
+			// $(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
+			// $(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');
 		}else{
 			$("#header").height(60);
 			$(".logo").animate({

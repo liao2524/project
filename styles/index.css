@@ -30,14 +30,13 @@ body{background-color: #eee}
 	height: 100%;
 	float: left;
 	border-right: 1px solid #363636;
+	position: relative;
 }
 #header .logo{
 	width: 90px;
 	height: 120px;
-	/*width: 120px;
-	height: 60px;*/	
 	background-color: 	#000000;
-	z-index: 1000; 
+	/*z-index: 1000; */
 	position: absolute;
 	left: 0; 
 }
@@ -67,7 +66,8 @@ body{background-color: #eee}
 	background-color: #000000;
 	height: 100%;
 	width: 340px;
-	float: right;
+	position: absolute;
+	right: 0; 
 }
 #header .forumNav li{
 	position: relative;
@@ -199,18 +199,36 @@ body{background-color: #eee}
 	display:  inline-block;
 	width: 204px;
 	height: 100%;
+	position: relative;
+	
 
 }
-#header .section_right div.app a, div.search a,div.aboutUs a{
-	display: inline-block;
+#header .section_right .aboutUs_img{
+	text-decoration: none;
+}
+#header .section_right .aboutUs_text{
+	text-decoration: none;
+}
+#header .section_right .aboutUs_img{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 96px;
+	margin-top: -10px;
+}
+#header .section_right div.app a, div.search a,.aboutUs_text{
+	display: block;
 	font-size: 14px;
 	font-family: Helvetica,Tahoma,Arial sans-serif;
 	color: white;
 	text-decoration: none;
-
+	position: absolute;
+	top: 50%;
+	margin: -6px 0 0 15px;
 /*	height: 100%;
 	line-height: 100%;*/
 }
+
 /*#header .section_right a::after{
 	position: absolute;
     right: 0;
@@ -223,7 +241,7 @@ body{background-color: #eee}
 /*#header .section_right a:nth-child(2){
 	border-right: 1px solid #363636;
 }*/
-#header .section_right a img{
+#header .section_right .aboutUs_img img{
 	padding-right: 10px;
 }
 #header .section_right .QR_code {
@@ -237,10 +255,10 @@ body{background-color: #eee}
 	background-color: #ffc71f;
 	z-index: 1000;
 }
-#header .section_right .QR_code a img{
+/*#header .section_right .QR_code a img{
 	padding-right: 0px;
 }
-
+*/
 /*全Nva列表*/
 #header .allNav_list{
 	width: 100%;
@@ -286,7 +304,7 @@ body{background-color: #eee}
 	top: 90px;
 	margin: 0 auto;
 	width: 1010px;
-	height: 1700px;
+	height: 1755px;
 	overflow: hidden;
 }
 /*#content{
@@ -640,16 +658,45 @@ body{background-color: #eee}
 }
 
 /*加载更多*/
-.com-loader {
+.com_loader {
     height: 100px;
+    width: 1010px;
     text-align: center;
     line-height: 100px;
+    position: absolute;
+    bottom: 0;
 }
-
+.com_loader .large .loader_bd {
+}
+.com_loader .loader_bd {
+    font-size: 18px;
+    background-color: #FFD700;
+    display: inline-block;
+    color: #bbb;
+    /*text-align: center;*/
+    /*margin: 0 auto;*/
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 40px;
+}
+.notext{
+	display: none;
+}
+.com_loader.showmore .loader_bd .showtext {
+    display: inline-block;
+}
+.com_loader .loader_bd .showtext {
+    display: none;
+    padding: 15px 50px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 18px;
+}
 
 /*页脚样式*/
 .com_page_footer {
     position: relative;
+    bottom: -100px;
     margin-top: -200x;
     min-width: 1190px;
     width: 100%;
