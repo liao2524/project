@@ -304,7 +304,8 @@ body{background-color: #eee}
 	top: 90px;
 	margin: 0 auto;
 	width: 1010px;
-	height: 1755px;
+	/*height: 1755px;*/
+	min-height:550px;  
 	overflow: hidden;
 }
 /*#content{
@@ -514,11 +515,11 @@ body{background-color: #eee}
 
 
 /*项目新闻*/
-#content .item{
+/*#content .item{
 	width: 1010px;
 	height: 280px;
 	float: left;
-}
+}*/
 #content .item a{
 	text-decoration: none;		
 }
@@ -696,8 +697,8 @@ body{background-color: #eee}
 /*页脚样式*/
 .com_page_footer {
     position: relative;
-    bottom: -100px;
-    margin-top: -200x;
+    
+    /*margin-top: -200px;*/
     min-width: 1190px;
     width: 100%;
     height: 323px;
@@ -890,4 +891,34 @@ body{background-color: #eee}
 #content .download_app a img{
 	width: 245px;
 	height: 160px;
+}
+
+
+
+
+
+
+
+/*动态添加item的样式*/
+.loading li{
+	display: none;
+	float: left;
+}
+
+
+.loading li:first-child{
+	animation-duration: 1s;    
+	animation-iteration-count: infinite;
+	margin-right: 10px;   
+}
+
+.loading li:nth-child(2){
+	animation-duration: 1s;    
+	animation-iteration-count: infinite;
+	margin-right: 10px;   
+}
+
+.loading li:last-child{
+	animation-duration: 1s;    
+	animation-iteration-count: infinite;   
 }

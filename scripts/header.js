@@ -58,7 +58,7 @@ $(function(){
 // 切换高度
 $(function () {
 	$(window).scroll(function() {
-		var scrollTop=$("body").scrollTop();
+		var scrollTop=$(window).scrollTop();
 		$(".allNav_list").css('display', 'none');
 		if (scrollTop==0) {
 			// alert(scrollTop);
@@ -81,6 +81,9 @@ $(function () {
 			// $(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');
 		}else{
 			$("#header").height(60);
+			// $("#header").animate({
+			// 	height: 60},
+			// 	500);
 			$(".logo").animate({
 				height: 60,
 				width: 120},
