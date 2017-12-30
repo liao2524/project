@@ -520,7 +520,7 @@ body{background-color: #eee}
 	height: 280px;
 	float: left;
 }*/
-#content .item a{
+/* #content .item a{
 	text-decoration: none;		
 }
 #content .item_img{
@@ -534,8 +534,8 @@ body{background-color: #eee}
 }
 #content .item_img>img:hover{
 	transform: scale(1.05);
-	/*transition: all 1s;*/
-	/*transition: all 1s ease-in-out;*/
+	transition: all 1s;
+	transition: all 1s ease-in-out;
 }
 #content .item_img span{
 	position: absolute;
@@ -549,7 +549,7 @@ body{background-color: #eee}
 }
 #content .item_text{
 	width: 225px;
-	/*height: 45px;*/
+	height: 45px;
 	padding: 10px 10px 0 10px;
 	font-size: 16px;
 	font-family: Arial,Helvetica,Tahoma,Arial sans-serif;
@@ -582,7 +582,7 @@ body{background-color: #eee}
 	margin-right: 5px;
 }
 
-/*焦点小组和想法*/
+焦点小组和想法
 #content .item>div.item_focus{
 	width: 670px;
 	height: 320px;
@@ -605,8 +605,8 @@ body{background-color: #eee}
 	position: absolute;
 	top: 15px;
 	left: 25px;
-	/*z-index: 100;*/
-	/*display: none;*/
+	z-index: 100;
+	display: none;
 }
 #content .item .item_focus_bottom{
 	width: 670px;
@@ -643,7 +643,7 @@ body{background-color: #eee}
 	height: 320px;
 }
 
-/*Gucci*/
+Gucci
 #content .item .itemGucci{
 	width: 500px;
 	height: 280px;
@@ -656,6 +656,111 @@ body{background-color: #eee}
 }
 #content .item>div.itemGucci{
 	margin-right: 0;
+} */
+
+
+
+/* 动态Item样式 */
+.item_container{
+	margin-top: 10px;
+}
+.item_container ul li{
+	float: left;
+	margin-top: 10px;
+}
+.item_margin_right{
+	margin-right: 10px;
+}
+.item_normal{
+	width: 245px;
+	height: 280px;
+	background-color: #fff;
+	position: relative;
+}
+.item_normal img{
+	width: 245px;
+	height: 190px;
+}
+.item_normal_txt{
+	margin-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #0f1419;
+}
+.item_normal_category{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-size: 14px;
+	color: #fff;
+}
+.item_time_comment_praise{
+	width: 225px;
+	color: #666;
+	bottom: 0px;
+	position: absolute;
+	margin-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.item_normal_praise{
+	float: right;
+	color: #d1d1d1;
+}
+.item_normal_praise span:first-child{
+	margin-right: 20px;
+	background: url("../images/comment.png") no-repeat scroll left center;
+	padding-left: 25px;
+
+}
+.item_normal_praise span:last-child{
+	background: url("../images/praise.png") no-repeat scroll left center;
+	padding-left: 25px;	
+}
+.item_large{
+	width: 500px;
+}
+
+.item_large img{
+	width: 500px;
+}
+.item_large_time_comment_praise{
+	width: 480px;
+}
+
+.item_max, .item_max img{
+	width: 670px;
+	height: 320px;
+}
+
+.item_max{
+	position: relative;
+}
+.item_max_bottom{
+	width: 650px;
+	height: 70px;
+	background-color: #000;
+	opacity: 0.5;
+	padding-left: 20px;
+	padding-top: 10px;	
+	position: absolute;
+	bottom: -80px;
+}
+.item_max_bottom p:first-child{
+	color: #fff;
+	font-size: 18px;
+}
+.item_max_bottom p:last-child{
+	color: #eee;
+	margin-top: 5px;
+	font-size: 16px;
+}
+.item_max_small, .item_max_small img{
+	width: 330px;
+	height: 320px;
+}
+.item_max_small{
+	clear: both;
 }
 
 /*加载更多*/
