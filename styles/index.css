@@ -305,8 +305,8 @@ body{background-color: #eee}
 	margin: 0 auto;
 	width: 1010px;
 	/*height: 1755px;*/
-	min-height:740px;  
-	overflow: hidden;
+	/*min-height:740px;  */
+	/*overflow: hidden;*/
 }
 /*#content{
 	margin: 90px auto;
@@ -515,12 +515,12 @@ body{background-color: #eee}
 
 
 /*项目新闻*/
-/*#content .item{
+#content .item{
 	width: 1010px;
 	height: 280px;
 	float: left;
-}*/
-/* #content .item a{
+}
+ #content .item a{
 	text-decoration: none;		
 }
 #content .item_img{
@@ -643,7 +643,7 @@ body{background-color: #eee}
 	height: 320px;
 }
 
-Gucci
+/*Gucci*/
 #content .item .itemGucci{
 	width: 500px;
 	height: 280px;
@@ -651,12 +651,12 @@ Gucci
 #content .item .itemGucci a>div{
 	width: 500px;
 }
-#content .item .itemGucci .item_text{
+#content .item .itemGucci .item_large_text{
 		width: 480px;
 }
 #content .item>div.itemGucci{
 	margin-right: 0;
-} */
+} 
 
 
 
@@ -894,7 +894,7 @@ Gucci
 
 
 /*同用样式*/
-#content .item>div{
+#content .item .item_content{
 	width: 245px;
 	height: 280px;
 	float: left;
@@ -918,15 +918,15 @@ Gucci
     /*display: table-row-group;*/
 }
 /*个别样式调整*/
-#content .item>div:nth-child(4){
+#content .item>div:nth-child(4n){
 	margin-right: 0;
 }
-#content .item>div:nth-child(6){
+/* #content .item>div:nth-child(6){
 	margin-right: 0;
 }
 #content .item>div:nth-child(13){
 	margin-right: 0;
-}
+} */
 
 
 
