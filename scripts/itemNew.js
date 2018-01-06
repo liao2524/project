@@ -30,9 +30,9 @@ var commentCount = 100;
 var praiseCount = 100;
 var imgSrc = "images/item/itemPicture2.jpeg";
 var imgAfterSrc = "images/item/itemIdea.gif";
-var imgJoinSrc = "images/item/itemFocus_left.png";
+var imgJoinSrc = "images/item/focus.jpeg";
 var imgJoinRightSrc = "";
-var imgJoinLeftSrc = "images/item/focus.jpeg";
+var imgJoinLeftSrc = "images/item/itemFocus_left.png";
 function createTagItem(type){
 	if (300 === type) {
 		var imgAfter = '<img src="'+imgAfterSrc+'">';
@@ -40,18 +40,19 @@ function createTagItem(type){
 		var aAfterTag = '<a href="item.html" class="item_join_after">'+divAfterImg+'</a>';
 
 		var JoinTextStr = '这是一段文字描述这是一段文字描述这是一段文字描述这是一段文字描述';
+		var joinH3Str = "【标题标题标题标】";
+		var h3Tag = '<h3>'+joinH3Str+'<h3>';
 		var pTag = '<p>'+ JoinTextStr+'</p>';
-		var h3Tag = "【标题标题标题标】";
-		var divBottom  = '<div class="item_date">'+ h3Tag + pTag+'</div>';
+		var divBottom  = '<div class="item_join_bottom">'+ h3Tag + pTag+'</div>';
 
 		var imgJoin = '<img src="'+imgJoinSrc+'"  class="item_join_img">';
 
 		var	imgJoinRight = '<img src="'+imgJoinRightSrc+'"  class="item_join_img">';
-		var joinRight = '<div class="item_date">'+ imgJoinRight+'</div>';
+		var joinRight = '<div class="item_join_right">'+ imgJoinRight+'</div>';
 
-		var	imgJoinLeft = '<img src="'+imgJoinLeftSrc+'"  class="item_join_img">';
+		var	imgJoinLeft = '<img src="'+imgJoinLeftSrc+'"  class="item_join_left">';
 
-		var aJoinTag = '<a href="item.html">'+imgJoinLeft+joinRight+imgJoin+divBottom+aAfterTag+'</a>';
+		var aJoinTag = '<a href="item.html">'+imgJoinLeft+joinRight+imgJoin+divBottom+'</a>'+aAfterTag;
 		return '<div class="item_join">'+aJoinTag+'</div>';
 	}else{
 		// 由最里层开始添加

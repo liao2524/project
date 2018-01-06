@@ -1078,6 +1078,7 @@ body{background-color: #eee}
 	top: 15px;
 	left: 25px;
 	z-index: 100;
+	display: none;
 }
 #content .item .item_join_bottom{
 	width: 670px;
