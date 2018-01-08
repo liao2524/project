@@ -307,8 +307,10 @@ body{background-color: #eee}
 	position: relative;
 	top: 90px;
 	margin: 0 auto;
-	width: 1010px;
+	width: 1030px;
 	height: 100%;
+	box-sizing: border-box;
+	padding-left: 10px;
 	/*min-height:740px;  */
 	/*overflow: hidden;*/
 }
@@ -521,7 +523,7 @@ body{background-color: #eee}
 
 /*项目新闻*/
 #content .item{
-	width: 1010px;
+	width: 100%;
 	/*float: left;*/
 	/*overflow: hidden;*/
 }
@@ -533,11 +535,11 @@ body{background-color: #eee}
 	height: 185px;
 	overflow: hidden;
 }
-#content .item_img>img{
+#content .item_img>img,.item_large_img>img{
 		transform: scale(1);
 		transition: all 1s;
 }
-#content .item_img>img:hover{
+#content .item_img>img:hover,.item_large_img>img:hover{
 	transform: scale(1.05);
 	transition: all 1s;
 	transition: all 1s ease-in-out;
@@ -653,19 +655,45 @@ body{background-color: #eee}
 	width: 500px;
 	height: 280px;
 	float: left;
-	margin-top: 10px;
+	margin: 10px 10px 0 0;
 	background-color: white;
+	position: relative;
 }
 #content .item .item_content_large a>div{
 	width: 500px;
 }
 #content .item .item_content_large .item_large_text{
-		width: 480px;
+	width: 480px;	
+	margin: 5px 10px;
 }
-#content .item>div.item_content_large{
-	margin-right: 0;
+#content .item_large_text h3 span{
+	/*width: auto;*/
+	font-size: 20px;
+    line-height: 25px;
+    overflow: hidden;
+    font-weight: 400;
+    /*margin-bottom: 5px;*/
+    padding: 0 5px;
+    background-color: #000;
+    color: #fff;
+	/*display: none;*/
+    /*display: table-row-group;*/
+}
+#content .item .item_large_date{
+	position: absolute;
+	bottom: 0;
 } 
+#content .item_large_img {
+	overflow: hidden;
+	height: 185px;
+}
+#content .item_large_img span{
+	position: absolute;
+	top: 11px;
+	left: 11px;
+	color: white;
 
+}
 
 
 /* 动态Item样式 */
@@ -774,7 +802,7 @@ body{background-color: #eee}
 /*加载更多*/
 .com_loader {
     height: 100px;
-    width: 1010px;
+    width: 1030px;
     text-align: center;
     line-height: 100px;
     position: absolute;
@@ -812,7 +840,7 @@ body{background-color: #eee}
 /*动态添加item的loading样式*/
 .loading{	
 	height: 100px;
-    width: 1010px;
+    width: 1030px;
     line-height: 100px; 
    	display: none;
 }
@@ -947,23 +975,11 @@ body{background-color: #eee}
 	float: left;
 	visibility: visible;
 }
-#content .item h3 span{
-	/*width: auto;*/
-	font-size: 20px;
-    line-height: 25px;
-    overflow: hidden;
-    font-weight: 400;
-    /*margin-bottom: 5px;*/
-    padding: 0 10px;
-    background-color: #000;
-    color: #fff;
-	/*display: none;*/
-    /*display: table-row-group;*/
-}
+
 /*个别样式调整*/
-#content .item_content_right{
+/*#content .item_content_right{
 	margin-right: 0;
-}
+}*/
 /* #content .item>div:nth-child(6){
 	margin-right: 0;
 }
@@ -979,7 +995,7 @@ body{background-color: #eee}
 /*跳转到的网页样式*/
 #content .register,.item_sidebar{
 	width: 245px;
-	height: 440px;
+	height: 450px;
 	float: left;
 }
 #content .register_img,.item_sidebar .register_img{
@@ -1078,7 +1094,7 @@ body{background-color: #eee}
 	top: 15px;
 	left: 25px;
 	z-index: 100;
-	display: none;
+	/*display: none;*/
 }
 #content .item .item_join_bottom{
 	width: 670px;
