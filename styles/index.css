@@ -549,10 +549,13 @@ body{background-color: #eee}
 	top: 11px;
 	left: 11px;
 	color: white;
-
+	background: url("../images/head_category_list_design.png") no-repeat scroll left center;
+	padding-left: 20px;
+	line-height: 18px;
+	font-size: 12px;
+	vertical-align: middle;
 }
 #content .item_img span img{
-	vertical-align: middle;
 }
 #content .item_text{
 	width: 225px;
@@ -579,15 +582,26 @@ body{background-color: #eee}
 	font-size: 12px;
 	margin: 9px 5px;
 }
-#content .item_date_ribbon span{
-	line-height: 14px; 
+#content .item_date_ribbon span:first-child{
+	background: url("../images/comment.png") no-repeat scroll left center;
+	padding-left: 20px;
+	margin-right: 10px;
+	/*line-height: 14px; */
+	background-size: 14px 14px;
 }
-#content .item_date_ribbon span img{
+#content .item_date_ribbon span:last-child{
+	background: url("../images/praise.png") no-repeat scroll left center;
+	padding-left: 20px;
+	margin-right: 10px;
+	/*line-height: 14px; */
+	background-size: 14px 14px;
+}
+/*#content .item_date_ribbon span img{
 	vertical-align: middle;
 	width: 14px;
 	height: 14px;
 	margin-right: 5px;
-}
+}*/
 
 /* 焦点小组和想法
 #content .item>div.item_join{
@@ -692,7 +706,8 @@ body{background-color: #eee}
 	top: 11px;
 	left: 11px;
 	color: white;
-
+	background: url("../images/head_category_list_design.png") no-repeat scroll left center;
+	padding-left: 20px;
 }
 
 

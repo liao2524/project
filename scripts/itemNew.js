@@ -21,14 +21,27 @@ function addTag(tagClass,tag,tagContent) {
 // 	praiseCount:0,
 // 	type:100 
 // };
-
+var imgArrays = [
+"images/item/item1.jpg",
+"images/item/item2.jpg",
+"images/item/item3.jpg",
+"images/item/item4.jpg",
+"images/item/item5.jpg",
+"images/item/item6.png",
+"images/item/item7.jpg",
+"images/item/item8.jpg",
+"images/item/item9.jpg",
+"images/item/item10.jpg",
+"images/item/item11.jpg",
+"images/item/item12.jpeg",
+];
 
 
 
 
 var commentCount = 100;
 var praiseCount = 100;
-var imgSrc = "images/item/itemPicture2.jpeg";
+var imgSrc = "";
 var imgAfterSrc = "images/item/itemIdea.gif";
 var imgJoinSrc = "images/item/focus.jpeg";
 var imgJoinRightSrc = "";
@@ -106,18 +119,16 @@ $item.append($itemContent);
 });
 */
 $(function(){
-	// createTagItem();
 	divCount(16,0);
+	// alterImg(imgSign);
 });
-
+var imgSign=0;
+var cycles=0;
+var sign = 0;
 var scrollCount=0;
 function divCount(TagCount,scrollCount) {
-	// alert(scrollCount);
-	/*var $itemContent =createTagItem(100);*/
 	var $itemContent ='';
 	var $item = $('.itemLear');
-	var sign = 0;
-	/*var typeVal = Math.random();*/
 	if (scrollCount===0) {
 		for (var j = 0; j < 5; j++) {
 			if (j===4) {
@@ -126,47 +137,52 @@ function divCount(TagCount,scrollCount) {
 				$itemContent=createTagItem(100);
 			}
 			$item.before($itemContent);
+			alterImg(imgSign);
+			imgSign++;
 		}
 	scrollCount+=1;
 	TagCount-=5;
 	}
-	/*alert(typeVal);*/
-	/*var typeVal=0.5;*/
-	if (0<scrollCount<3) {
+	else {
 		for (var i = 0; i < TagCount; i++) {
 			var typeVal = Math.random();
-			var r = sign%4;
-			console.log(r);
-			// alert(sign);
-			// alert(typeof typeVal);
-			// console.log(typeVal);
 			if (typeVal<=0.8) {
 				$itemContent=createTagItem(100);
+				$item.before($itemContent);
+				alterImg(imgSign);
+				imgSign++;
 				sign += 1;
 			}else{
 				if (sign==3) {
 					$itemContent=createTagItem(100);
+					$item.before($itemContent);
+					alterImg(imgSign);
+					imgSign++;
+					alert(imgSign);
 					sign += 1;
 				}else{
 					$itemContent=createTagItem(200);
+					$item.before($itemContent);
 					sign += 2;
 				}
 			}
-			
-			// console.log(sign);
-			
-			$item.before($itemContent);	
+			if (sign===4) {
+				sign=0;
+			}
+			if (imgSign==14) {
+				imgSign=0;
+			}	
 		}	
-	}else{
-		$('.showmore').show();
 	}
 }
+
 $(function () {
 	$('.showmore_btn').click(function() {
 		divCount(10,0);
 		scrollCount=1;
 	});
 });
+
 $(function () {
 	$(window).scroll(function() {
 		var scrollTop=$(window).scrollTop();
@@ -174,12 +190,22 @@ $(function () {
 		
 		if (scrollTop>=contentHeigth) {
 			divCount(10,1);
-			/*setTimeout(divCount(10,scrollCount),3000);*/
 			scrollCount+=1;	
 		}
 		$(".allNav_list").css('display', 'none');
 	});	
 });
+//添加不同的图片
+function alterImg(imgSign) {
+	$('.item_img').eq(imgSign).find('img').attr('src', imgArrays[cycles]);
+	cycles++;
+	// if (cycles==13) {
+	// 	cycles=0;
+	// }
+	// alert(imgSign);
+	// imgSign++;
+	
+}
 /*$('html').click(function() {
 var scrollTop=$(window).scrollTop();
 	alert(scrollTop);
