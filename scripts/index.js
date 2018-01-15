@@ -1,4 +1,4 @@
-
+﻿
 $(document).ready(function () {
     var i = 0;
     var clone = $(".imgRoll .imgRoll_list li").first().clone();//克隆第一张图片
@@ -288,12 +288,30 @@ $(function () {
 });
 //添加不同的图片
 function addDate(imgSign) {
-    $('.item_content').eq(imgSign).find('img').attr('src', jsonItem[imgSign].imgSrc);
-    $('.item_content').eq(imgSign).find('span').text(jsonItem[imgSign].categoryStrSrc);
-    $('.item_content').eq(imgSign).children().children('.item_text').text(jsonItem[imgSign].descStr);
-    $('.item_content').eq(imgSign).children().children('.item_date').find('span').text(jsonItem[imgSign].timeStrSrc);
-    $('.item_content').eq(imgSign).children().find('.item_date_ribbon').find('span').first().text(jsonItem[imgSign].commentCount);
-    $('.item_content').eq(imgSign).children().find('.item_date_ribbon').find('span').last().text(jsonItem[imgSign].praiseCount);
+    $('.item_content').eq(imgSign)
+                      .find('img')
+                      .attr('src', jsonItem[imgSign].imgSrc);
+    $('.item_content').eq(imgSign)
+                      .find('span')
+                      .text(jsonItem[imgSign].categoryStrSrc);
+    $('.item_content').eq(imgSign)
+                      .children().children('.item_text')
+                      .text(jsonItem[imgSign].descStr);
+    $('.item_content').eq(imgSign)
+                      .children()
+                      .children('.item_date')
+                      .find('span').text(jsonItem[imgSign].timeStrSrc);
+    $('.item_content').eq(imgSign)
+                      .children().find('.item_date_ribbon')
+                      .find('span')
+                      .first()
+                      .text(jsonItem[imgSign].commentCount);
+    $('.item_content').eq(imgSign)
+                      .children()
+                      .find('.item_date_ribbon')
+                      .find('span')
+                      .last()
+                      .text(jsonItem[imgSign].praiseCount);
     cycles++;
     // if (cycles==13) {
     //  cycles=0;
@@ -302,9 +320,23 @@ function addDate(imgSign) {
     // imgSign++;
     
 }
-/*$('html').click(function() {
-var scrollTop=$(window).scrollTop();
-    alert(scrollTop);
-    var contentHeigth = $('#content').height()-483;
-    alert(contentHeigth);       
-    });*/
+
+
+//对象
+/*var itemDate ={
+    img:"",
+    categoryStr:"",
+    time:"",
+    desc:"",
+    commentCount:"",
+    praiseCount:""
+};
+function addDate(imgSign) {
+    var itemdate = new itemDate();
+    itemData.img = jsonItem[imgSign].imgSrc;
+    itemData.categoryStr = jsonItem[imgSign].categoryStrSrc;
+    itemData.desc = jsonItem[imgSign].descStr;
+    itemData.time = jsonItem[imgSign].timeStrSrc;
+    itemData.commentCount = jsonItem[imgSign].commentCount;
+    itemData.praiseCount = jsonItem[imgSign].praiseCount;
+}*/
