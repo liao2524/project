@@ -90,7 +90,7 @@ var jsonItem=[
 {"imgSrc":"images/item/item3.jpg","categoryStrSrc":"智能","timeStrSrc":"时间","descStr":"“全球时尚行业至少五分之一的消费者都聚集在中国”","commentCountSrc":120,"praiseCountSrc":430},
 {"imgSrc":"images/item/item4.jpg","categoryStrSrc":"旅游","timeStrSrc":"时间","descStr":"双中子星并合","commentCountSrc":90,"praiseCountSrc":210},
 {"imgSrc":"images/item/item5.jpg","categoryStrSrc":"娱乐","timeStrSrc":"时间","descStr":"9 张图带你看那一代老派互联网科技公司的起落","commentCountSrc":300,"praiseCountSrc":502},
-{"imgSrc":"images/item/item6.jpg","categoryStrSrc":"时尚","timeStrSrc":"时间","descStr":"办公室设计在这一点上怎么配合？","commentCountSrc":303,"praiseCountSrc":72},
+{"imgSrc":"images/item/item6.png","categoryStrSrc":"时尚","timeStrSrc":"时间","descStr":"办公室设计在这一点上怎么配合？","commentCountSrc":303,"praiseCountSrc":72},
 {"imgSrc":"images/item/item7.jpg","categoryStrSrc":"体育","timeStrSrc":"时间","descStr":"宇宙最大烟火表演”激动人心","commentCountSrc":109,"praiseCountSrc":100},
 {"imgSrc":"images/item/item8.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"我们看待宇宙的方式要变了吗？","commentCountSrc":100,"praiseCountSrc":100},
 {"imgSrc":"images/item/item9.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"搜狗终于要上市了","commentCountSrc":100,"praiseCountSrc":100},
@@ -100,6 +100,36 @@ var jsonItem=[
 ];
 
 
+var imgArrays = [
+    "http://img.qdaily.com/article/article_show/20171031094030LZbuDQdlaX4SFohi.png?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201710311110263FMjdvzcn7QraOu2.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20171031114624dis7rOEJR62YjgDw.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20171031115703gIHeuaTCJ5kBFqoh.png?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201710301359295QmfD8yiJvbNl6Ea.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20171030225326muNfc0HEQsnJeDb6.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180115020919X4JuGQOHsdjY8qxC.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201801150219205KwFJlsOvt9z624E.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180116173913FG9Ur7ht8Lf0EZ6W.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180115180924VyXm1hP4R92B8itY.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201801161120099ZYU3zFxjA7mOfCb.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180112163144MVCiTecmGhq9sgY2.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180116120841MZo2iDU15uzhwJsr.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180116173827jAm2TdOqtHCI6fro.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1"
+];
+var descArrays = [
+    "两大浏览器将停止自动播放视频，这对广告行业有什么影响？",
+    "这套可移动的模块化单元房，可作图书馆也可作住宅",
+    "日本小镇特产走出大山，靠的是一座废料搭起来的酿酒厂",
+    "沃尔玛引入扫描货架机器人，速度比人类快三倍",
+    "美图投资的 Faceu 完成新一轮融资，也说要做社交",
+    "「这世界」130 年了，千克的定义要变了",
+    "搜狗终于要上市了",
+    "员工身心健康也是企业竞争力",
+    "9 张图带你看那一代老派互联网科技公司的起落",
+    "你看那一代老派互联网科技公司的起落",
+    "宇宙最大烟火表演”激动人心",
+    "双中子星并合",
+];
 var commentCount = "";
 var praiseCount ="" ;
 var imgSrc = "";
@@ -181,6 +211,26 @@ function createData() {
 
 }
 alert(arrs);*/
+/*function ObjStory(img,categoryStr,desc,time,commentCount,praiseCount) //声明对象
+{
+    this.img = jsonItem[i].imgSrc;
+    this.categoryStr = jsonItem[i].categoryStrSrc;
+    this.desc = jsonItem[i].descStr;
+    this.time = jsonItem[i].timeStrSrc;
+    this.commentCount = jsonItem[i].commentCount;
+    this.praiseCount = jsonItem[i].praiseCount;
+ 
+}
+ 
+var arrs = new Array();//声明数组，用来存储
+ 
+var writer= new ObjStory();//创建对象*/
+/*arr[0]=writer;//向数组中添加对象*/
+/*arrs.push(new ObjStory(jsonItem[0].imgSrc,jsonItem[0].categoryStrSrc,jsonItem[0].descStr,jsonItem[0].descStr, jsonItem[0].timeStrSrc,jsonItem[0].commentCount,jsonItem[0].praiseCount);
+arrs.push(new ObjStory(jsonItem[1].imgSrc,jsonItem[1].categoryStrSrc,jsonItem[1].descStr,jsonItem[1].descStr, jsonItem[1].timeStrSrc,jsonItem[1].commentCount,jsonItem[1].praiseCount);
+
+*/
+
 function divCount(TagCount,scrollCount) {
     var $itemContent ='';
     var $item = $('.itemLear');
@@ -191,6 +241,7 @@ function divCount(TagCount,scrollCount) {
                 $itemContent=createTagItem(300);
             }else{
                 $itemContent=createTagItem(100);
+                /*alert(imgSign);*/
             }
             $item.before($itemContent);
             imgSign++;
@@ -225,23 +276,23 @@ function divCount(TagCount,scrollCount) {
             if (sign===4) {
                 sign=0;
             }
-            if (imgSign==14) {
+            if (imgSign==12) {
                 imgSign=0;
             }   
         }   
     }
 }
-
 function createTagItem(type){
     // console.log(imgSign);
     // var itemDate = new AddDate();
-    var itemDate = new ItemDate();
-    itemDate.img = jsonItem[imgSign].imgSrc;
-    itemDate.categoryStr = jsonItem[imgSign].categoryStrSrc;
-    itemDate.desc = jsonItem[imgSign].descStr;
-    itemDate.time = jsonItem[imgSign].timeStrSrc;
-    itemDate.commentCount = jsonItem[imgSign].commentCount;
-    itemDate.praiseCount = jsonItem[imgSign].praiseCount;
+    
+        var itemDate = new ItemDate();
+        itemDate.img = imgArrays[imgSign];
+        itemDate.categoryStr = jsonItem[imgSign].categoryStrSrc;
+        itemDate.desc = descArrays[imgSign];
+        itemDate.time = jsonItem[imgSign].timeStrSrc;
+        itemDate.commentCount = jsonItem[imgSign].commentCountSrc;
+        itemDate.praiseCount = jsonItem[imgSign].praiseCountSrc;
 
     if (300 === type) { 
         var imgAfter = '<img src="'+imgAfterSrc+'">';
@@ -305,7 +356,7 @@ function createTagItem(type){
                     
 $(function () {
     $('.showmore_btn').click(function() {
-        divCount(10,0);
+        divCount(16,0);
         scrollCount=1;
     });
 });
