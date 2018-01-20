@@ -145,19 +145,10 @@ var descLargeStr = '这是一个大标题这是一个大标题这是一个大标
 var timeStrSrc = "时间";
 var categoryStrSrc = "商业";
 
-/*$(function () {
-    $('html').click(function() {
-var $itemContent = createTagItem(100);
-// alert($itemContent);
-var $item = $('.item');
-$item.append($itemContent);     
-    });
-});*/
+
 
 $(function(){
     divCount(16,0);
-    // createData();
-     // itemDate(imgSign);
 });
 
 
@@ -180,56 +171,6 @@ var imgSign=0;
 var cycles=0; 
 var sign = 0;
 var scrollCount=0;
-/*function AddDate() {
-
-}
-AddDate.prototype={
-    img:jsonItem[imgSign].imgSrc,
-    categoryStr:jsonItem[imgSign].categoryStrSrc,
-    desc:jsonItem[imgSign].descStr,
-    time:jsonItem[imgSign].timeStrSrc,
-    commentCount:jsonItem[imgSign].commentCountSrc,
-    praiseCount:jsonItem[imgSign].praiseCountSrc
-};*/
-/*var arrs = new Array();
-
-function createData() {
-
-    for (var i = 0; i < jsonItem.length; i++) {
-
-        var itemDate = new ItemDate();
-        itemDate.img = jsonItem[i].imgSrc;
-        itemDate.categoryStr = jsonItem[i].categoryStrSrc;
-        itemDate.desc = jsonItem[i].descStr;
-        itemDate.time = jsonItem[i].timeStrSrc;
-        itemDate.commentCount = jsonItem[i].commentCount;
-        itemDate.praiseCount = jsonItem[i].praiseCount;
-
-        arrs.push(itemDate);
-    }
-
-
-}
-alert(arrs);*/
-/*function ObjStory(img,categoryStr,desc,time,commentCount,praiseCount) //声明对象
-{
-    this.img = jsonItem[i].imgSrc;
-    this.categoryStr = jsonItem[i].categoryStrSrc;
-    this.desc = jsonItem[i].descStr;
-    this.time = jsonItem[i].timeStrSrc;
-    this.commentCount = jsonItem[i].commentCount;
-    this.praiseCount = jsonItem[i].praiseCount;
- 
-}
- 
-var arrs = new Array();//声明数组，用来存储
- 
-var writer= new ObjStory();//创建对象*/
-/*arr[0]=writer;//向数组中添加对象*/
-/*arrs.push(new ObjStory(jsonItem[0].imgSrc,jsonItem[0].categoryStrSrc,jsonItem[0].descStr,jsonItem[0].descStr, jsonItem[0].timeStrSrc,jsonItem[0].commentCount,jsonItem[0].praiseCount);
-arrs.push(new ObjStory(jsonItem[1].imgSrc,jsonItem[1].categoryStrSrc,jsonItem[1].descStr,jsonItem[1].descStr, jsonItem[1].timeStrSrc,jsonItem[1].commentCount,jsonItem[1].praiseCount);
-
-*/
 
 function createData(){
 
@@ -275,9 +216,9 @@ for(var i=0; i<12; i++){
     arrsDate.push(itemDate);
 
 }
-console.log(arrsDate.length);
+/*console.log(arrsDate.length);*/
 
-console.log(arrsDate[0].desc);
+
 
 function divCount(TagCount,scrollCount) {
     var $itemContent ='';
@@ -331,16 +272,6 @@ function divCount(TagCount,scrollCount) {
     }
 }
 function createTagItem(type){
-    // console.log(imgSign);
-    // var itemDate = new AddDate();
-    
-        /*var itemDate = new ItemDate();
-        itemDate.img = imgArrays[imgSign];
-        itemDate.categoryStr = jsonItem[imgSign].categoryStrSrc;
-        itemDate.desc = descArrays[imgSign];
-        itemDate.time = jsonItem[imgSign].timeStrSrc;
-        itemDate.commentCount = jsonItem[imgSign].commentCountSrc;
-        itemDate.praiseCount = jsonItem[imgSign].praiseCountSrc;*/
 
     if (300 === type) { 
         var imgAfter = '<img src="'+imgAfterSrc+'">';
@@ -404,7 +335,7 @@ function createTagItem(type){
                     
 $(function () {
     $('.showmore_btn').click(function() {
-        divCount(16,0);
+        divCount(16,1);
         scrollCount=1;
     });
 });
@@ -413,14 +344,13 @@ $(function () {
     $(window).scroll(function() {
         var scrollTop=$(window).scrollTop();
         var contentHeigth = $('#content').height()-483;
-        
-        if (scrollTop>=contentHeigth) {
+        if (scrollTop>=contentHeigth&&scrollCount<4) {
             divCount(10,1);
             scrollCount+=1; 
         }
         $(".allNav_list").css('display', 'none');
+        // alert(scrollCount);
     }); 
 });
-
 
 

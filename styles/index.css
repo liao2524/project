@@ -4,6 +4,7 @@ body{background-color: #eee}
 	height: 80px;
 	/*height: 80px;*/
 	width: 100%;
+	min-width: 1399px;
 	line-height: 100%;
 	background-color: 	#000000;
 	/*position: relative;*/
@@ -86,10 +87,6 @@ body{background-color: #eee}
 	height: 20px;
 	display: block;
 	text-decoration: none;
-
-	/*overflow: hidden;*/
-	/*line-height: 100%;*/
-	/*vertical-align: middle;*/
 }
 #header .forumNav li span{
 	/*display: block;*/
@@ -102,11 +99,6 @@ body{background-color: #eee}
 	color: #FFD700;
 }
 #header .forumNav li a img{
-    /*position: absolute;
-    left: -20px;
-    top:5px;*/
-    /*height: 100%;*/
-	/*line-height: 100%;*/
     vertical-align: middle;
 }
 
