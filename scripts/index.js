@@ -84,49 +84,52 @@ function addTag(tagClass,tag,tagContent) {
 }
 
 
-// function ItemData(){
-
-// }
-// ItemData.prototype = {
-
-//  imgSrc:"",
-//  desc:"",
-//  publishTime:0,
-//  commentCount:0,
-//  praiseCount:0,
-//  type:100 
-// };
-var imgArrays = [
-"images/item/item1.jpg",
-"images/item/item2.jpg",
-"images/item/item3.jpg",
-"images/item/item4.jpg",
-"images/item/item5.jpg",
-"images/item/item6.png",
-"images/item/item7.jpg",
-"images/item/item8.jpg",
-"images/item/item9.jpg",
-"images/item/item10.jpg",
-"images/item/item11.jpg",
-"images/item/item12.jpeg",
-];
-
 var jsonItem=[
-{"imgSrc":"images/item/item1.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"搜狗终于要上市了","commentCount":120,"praiseCount":100},
-{"imgSrc":"images/item/item2.jpg","categoryStrSrc":"城市","timeStrSrc":"时间","descStr":"员工身心健康也是企业竞争力","commentCount":10,"praiseCount":90},
-{"imgSrc":"images/item/item3.jpg","categoryStrSrc":"智能","timeStrSrc":"时间","descStr":"“全球时尚行业至少五分之一的消费者都聚集在中国”","commentCount":120,"praiseCount":430},
-{"imgSrc":"images/item/item4.jpg","categoryStrSrc":"旅游","timeStrSrc":"时间","descStr":"双中子星并合","commentCount":90,"praiseCount":210},
-{"imgSrc":"images/item/item5.jpg","categoryStrSrc":"娱乐","timeStrSrc":"时间","descStr":"9 张图带你看那一代老派互联网科技公司的起落","commentCount":300,"praiseCount":502},
-{"imgSrc":"images/item/item6.jpg","categoryStrSrc":"时尚","timeStrSrc":"时间","descStr":"办公室设计在这一点上怎么配合？","commentCount":303,"praiseCount":72},
-{"imgSrc":"images/item/item7.jpg","categoryStrSrc":"体育","timeStrSrc":"时间","descStr":"宇宙最大烟火表演”激动人心","commentCount":109,"praiseCount":100},
-{"imgSrc":"images/item/item8.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"我们看待宇宙的方式要变了吗？","commentCount":100,"praiseCount":100},
-{"imgSrc":"images/item/item9.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"搜狗终于要上市了","commentCount":100,"praiseCount":100},
-{"imgSrc":"images/item/item10.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"你看那一代老派互联网科技公司的起落","commentCount":100,"praiseCount":100},
-{"imgSrc":"images/item/item11.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"｜我们的办公室④","commentCount":100,"praiseCount":100},
-{"imgSrc":"images/item/item12.jpeg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"搜狗终于要上市了","commentCount":100,"praiseCount":100},
+{"imgSrc":"images/item/item1.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"搜狗终于要上市了","commentCountSrc":120,"praiseCountSrc":100},
+{"imgSrc":"images/item/item2.jpg","categoryStrSrc":"城市","timeStrSrc":"时间","descStr":"员工身心健康也是企业竞争力","commentCountSrc":10,"praiseCountSrc":90},
+{"imgSrc":"images/item/item3.jpg","categoryStrSrc":"智能","timeStrSrc":"时间","descStr":"“全球时尚行业至少五分之一的消费者都聚集在中国”","commentCountSrc":120,"praiseCountSrc":430},
+{"imgSrc":"images/item/item4.jpg","categoryStrSrc":"旅游","timeStrSrc":"时间","descStr":"双中子星并合","commentCountSrc":90,"praiseCountSrc":210},
+{"imgSrc":"images/item/item5.jpg","categoryStrSrc":"娱乐","timeStrSrc":"时间","descStr":"9 张图带你看那一代老派互联网科技公司的起落","commentCountSrc":300,"praiseCountSrc":502},
+{"imgSrc":"images/item/item6.png","categoryStrSrc":"时尚","timeStrSrc":"时间","descStr":"办公室设计在这一点上怎么配合？","commentCountSrc":303,"praiseCountSrc":72},
+{"imgSrc":"images/item/item7.jpg","categoryStrSrc":"体育","timeStrSrc":"时间","descStr":"宇宙最大烟火表演”激动人心","commentCountSrc":109,"praiseCountSrc":100},
+{"imgSrc":"images/item/item8.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"我们看待宇宙的方式要变了吗？","commentCountSrc":100,"praiseCountSrc":100},
+{"imgSrc":"images/item/item9.jpg","categoryStrSrc":"城市","timeStrSrc":"时间","descStr":"搜狗终于要上市了","commentCountSrc":100,"praiseCountSrc":100},
+{"imgSrc":"images/item/item10.jpg","categoryStrSrc":"体育","timeStrSrc":"时间","descStr":"你看那一代老派互联网科技公司的起落","commentCountSrc":100,"praiseCountSrc":100},
+{"imgSrc":"images/item/item11.jpg","categoryStrSrc":"商业","timeStrSrc":"时间","descStr":"｜我们的办公室④","commentCountSrc":100,"praiseCountSrc":100},
+{"imgSrc":"images/item/item12.jpeg","categoryStrSrc":"智能","timeStrSrc":"时间","descStr":"搜狗终于要上市了","commentCountSrc":100,"praiseCountSrc":100},
 ];
 
 
+var imgArrays = [
+    "http://img.qdaily.com/article/article_show/20171031094030LZbuDQdlaX4SFohi.png?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201710311110263FMjdvzcn7QraOu2.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20171031114624dis7rOEJR62YjgDw.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20171031115703gIHeuaTCJ5kBFqoh.png?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201710301359295QmfD8yiJvbNl6Ea.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20171030225326muNfc0HEQsnJeDb6.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180115020919X4JuGQOHsdjY8qxC.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201801150219205KwFJlsOvt9z624E.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180116173913FG9Ur7ht8Lf0EZ6W.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180115180924VyXm1hP4R92B8itY.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/201801161120099ZYU3zFxjA7mOfCb.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180112163144MVCiTecmGhq9sgY2.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180116120841MZo2iDU15uzhwJsr.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",
+    "http://img.qdaily.com/article/article_show/20180116173827jAm2TdOqtHCI6fro.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1"
+];
+var descArrays = [
+    "两大浏览器将停止自动播放视频，这对广告行业有什么影响？",
+    "这套可移动的模块化单元房，可作图书馆也可作住宅",
+    "日本小镇特产走出大山，靠的是一座废料搭起来的酿酒厂",
+    "沃尔玛引入扫描货架机器人，速度比人类快三倍",
+    "美图投资的 Faceu 完成新一轮融资，也说要做社交",
+    "「这世界」130 年了，千克的定义要变了",
+    "搜狗终于要上市了",
+    "员工身心健康也是企业竞争力",
+    "9 张图带你看那一代老派互联网科技公司的起落",
+    "你看那一代老派互联网科技公司的起落",
+    "宇宙最大烟火表演”激动人心",
+    "双中子星并合",
+];
 var commentCount = "";
 var praiseCount ="" ;
 var imgSrc = "";
@@ -141,8 +144,136 @@ var descStr = '这是一段文字描述';
 var descLargeStr = '这是一个大标题这是一个大标题这是一个大标题这是一个大标题这是一个大标题';
 var timeStrSrc = "时间";
 var categoryStrSrc = "商业";
+
+
+
+$(function(){
+    divCount(16,0);
+});
+
+
+
+function ItemDate(){
+
+}
+ItemDate.prototype ={
+    img:"",
+    categoryStr:"",
+    time:"",
+    desc:"",
+    commentCount:"",
+    praiseCount:""
+};
+  
+
+
+var imgSign=0;
+var cycles=0; 
+var sign = 0;
+var scrollCount=0;
+
+function createData(){
+
+            }
+            createData.prototype = {
+                img:"",
+                desc:"",
+                categoryStr:"",
+                time:"",
+                commentCount:"",
+                praiseCount:""
+            };
+
+var arrsDate = new Array();
+
+
+for(var i=0; i<12; i++){
+
+    var itemDate = new createData();
+
+
+    var imgArrs = imgArrays[i];
+
+    var descArrs = descArrays[i];
+
+    var timeArrs = jsonItem[i].timeStrSrc;
+
+    var categoryStrArrs = jsonItem[i].categoryStrSrc;
+
+    var commentCountArrs = jsonItem[i].commentCountSrc;
+
+    var praiseCountArrs = jsonItem[i].praiseCountSrc;
+
+
+    itemDate.img = imgArrs;
+    itemDate.desc = descArrs;
+
+    itemDate.time = timeArrs;
+    itemDate.categoryStr = categoryStrArrs;
+
+    itemDate.commentCount = commentCountArrs;
+    itemDate.praiseCount = praiseCountArrs;
+    arrsDate.push(itemDate);
+
+}
+/*console.log(arrsDate.length);*/
+
+
+
+function divCount(TagCount,scrollCount) {
+    var $itemContent ='';
+    var $item = $('.itemLear');
+    if (scrollCount===0) {
+        for (var j = 0; j < 5; j++) {
+            // alterDate(imgSign);
+            if (j===4) {
+                $itemContent=createTagItem(300);
+            }else{
+                $itemContent=createTagItem(100);
+                /*alert(imgSign);*/
+            }
+            $item.before($itemContent);
+            imgSign++;
+        }
+    scrollCount+=1;
+    TagCount-=5;
+    }
+    else {
+        for (var i = 0; i < TagCount; i++) {
+            var typeVal = Math.random();
+            if (typeVal<=0.8) {
+                // alterDate(imgSign);
+                $itemContent=createTagItem(100);
+                $item.before($itemContent);
+                imgSign++;
+                sign += 1;
+            }else{
+                if (sign==3) {
+                    // alterDate(imgSign);
+                    $itemContent=createTagItem(100);
+                    $item.before($itemContent);
+   
+                    imgSign++;
+                    // alert(imgSign);
+                    sign += 1;
+                }else{
+                    $itemContent=createTagItem(200);
+                    $item.before($itemContent);
+                    sign += 2;
+                }
+            }
+            if (sign===4) {
+                sign=0;
+            }
+            if (imgSign==12) {
+                imgSign=0;
+            }   
+        }   
+    }
+}
 function createTagItem(type){
-    if (300 === type) {
+
+    if (300 === type) { 
         var imgAfter = '<img src="'+imgAfterSrc+'">';
         var divAfterImg = '<div class="item_join_after_img">'+imgAfter+'</div>';
         var aAfterTag = '<a href="item.html" class="item_join_after">'+divAfterImg+'</a>';
@@ -164,179 +295,72 @@ function createTagItem(type){
         return '<div class="item_join">'+aJoinTag+'</div>';
     }else{
         // 由最里层开始添加
-        var timeStr = '<span>'+timeStrSrc+'</span>';
-        var commentStr = '<span>'+commentCount+'</span>';
-        var praiseStr = '<span>'+praiseCount+'</span>'; 
+        var timeStr = '<span>'+arrsDate[imgSign].time +'</span>';
+        var commentStr = '<span>'+arrsDate[imgSign].commentCount+'</span>';
+        var praiseStr = '<span>'+arrsDate[imgSign].praiseCount+'</span>'; 
         var divTimeCommentPraise = '<div class="item_date_ribbon">'+ commentStr + praiseStr + '</div>';
-        var itemDate = '';
+        var itemTimeDate = '';
         
         if(100 === type){
-            itemDate = '<div class="item_date">'+ timeStr + divTimeCommentPraise+'</div>';
+            itemTimeDate = '<div class="item_date">'+ timeStr + divTimeCommentPraise+'</div>';
         }
         if(200 === type){
-            itemDate = '<div class="item_date item_large_date">'+ timeStr + divTimeCommentPraise+'</div>';
+            itemTimeDate = '<div class="item_date item_large_date">'+ timeStr + divTimeCommentPraise+'</div>';
         }
 
-        var divTxt = '<div class="item_text">'+descStr+'</div>';
+        var divTxt = '<div class="item_text">'+arrsDate[imgSign].desc+'</div>';
 
         var divLargeTxt = '<div class="item_large_text"> <h3> <span>'+descLargeStr+' </h3> </span></div>';
 
-        var img = '<img src="'+imgSrc+'">';
+        var img = '<img src="'+arrsDate[imgSign].img+'">';
         var imgLarge='<img src="'+imgLargeSrc+'">';
-        var categoryStr = '<span>'+categoryStrSrc+'</span>';
+        var categoryStr = '<span>'+arrsDate[imgSign].categoryStr+'</span>';
         var divItemImg = '';
 
         var aTag = '';
         if(100 === type){
             divItemImg = '<div class="item_img">'+img+categoryStr+'</div>';
-            aTag = '<a href="item.html">'+divItemImg+divTxt+itemDate+'</a>';
+            aTag = '<a href="item.html">'+divItemImg+divTxt+itemTimeDate+'</a>';
             return '<div class="item_content">'+aTag+'</div>';
         } 
         if(200 === type){
             divItemImg = '<div class="item_large_img">'+imgLarge+categoryStr+'</div>';
-            aTag = '<a href="item.html">'+divItemImg+divLargeTxt+itemDate+'</a>';
+            aTag = '<a href="item.html">'+divItemImg+divLargeTxt+itemTimeDate+'</a>';
             return '<div class="item_content_large">'+aTag+'</div>';
         } 
     }
 
 }
-/*$(function () {
-    $('html').click(function() {
-var $itemContent = createTagItem(100);
-// alert($itemContent);
-var $item = $('.item');
-$item.append($itemContent);     
-    });
-});
-*/
-$(function(){
-    divCount(16,0);
-    // addDate(imgSign);
-});
-var imgSign=0;
-var cycles=0;
-var sign = 0;
-var scrollCount=0;
-function divCount(TagCount,scrollCount) {
-    var $itemContent ='';
-    var $item = $('.itemLear');
-    if (scrollCount===0) {
-        for (var j = 0; j < 5; j++) {
-            if (j===4) {
-                $itemContent=createTagItem(300);
-            }else{
-                $itemContent=createTagItem(100);
-            }
-            $item.before($itemContent);
-            addDate(imgSign);
-            imgSign++;
-        }
-    scrollCount+=1;
-    TagCount-=5;
-    }
-    else {
-        for (var i = 0; i < TagCount; i++) {
-            var typeVal = Math.random();
-            if (typeVal<=0.8) {
-                $itemContent=createTagItem(100);
-                $item.before($itemContent);
-                addDate(imgSign);
-                imgSign++;
-                sign += 1;
-            }else{
-                if (sign==3) {
-                    $itemContent=createTagItem(100);
-                    $item.before($itemContent);
-                    addDate(imgSign);
-                    imgSign++;
-                    // alert(imgSign);
-                    sign += 1;
-                }else{
-                    $itemContent=createTagItem(200);
-                    $item.before($itemContent);
-                    sign += 2;
-                }
-            }
-            if (sign===4) {
-                sign=0;
-            }
-            if (imgSign==14) {
-                imgSign=0;
-            }   
-        }   
-    }
-}
 
+                    
 $(function () {
     $('.showmore_btn').click(function() {
-        divCount(10,0);
+        $('.loader_bd').hide();
+        $('.loading').show();
+        // loadingTime(3000);
+        setTimeout("loadingTime()",3000);
+        /*$('.loading').hide();
+        $('.loader_bd').show();*/
         scrollCount=1;
     });
 });
-
+function loadingTime()
+{
+    divCount(16,1);
+    $('.loading').hide();
+    $('.loader_bd').show();
+}
 $(function () {
     $(window).scroll(function() {
         var scrollTop=$(window).scrollTop();
         var contentHeigth = $('#content').height()-483;
-        
-        if (scrollTop>=contentHeigth) {
-            divCount(10,1);
+        if (scrollTop>=contentHeigth&&scrollCount<4) {
+            setTimeout(divCount(10,1),1000);
             scrollCount+=1; 
         }
         $(".allNav_list").css('display', 'none');
+        // alert(scrollCount);
     }); 
 });
-//添加不同的图片
-function addDate(imgSign) {
-    $('.item_content').eq(imgSign)
-                      .find('img')
-                      .attr('src', jsonItem[imgSign].imgSrc);
-    $('.item_content').eq(imgSign)
-                      .find('span')
-                      .text(jsonItem[imgSign].categoryStrSrc);
-    $('.item_content').eq(imgSign)
-                      .children().children('.item_text')
-                      .text(jsonItem[imgSign].descStr);
-    $('.item_content').eq(imgSign)
-                      .children()
-                      .children('.item_date')
-                      .find('span').text(jsonItem[imgSign].timeStrSrc);
-    $('.item_content').eq(imgSign)
-                      .children().find('.item_date_ribbon')
-                      .find('span')
-                      .first()
-                      .text(jsonItem[imgSign].commentCount);
-    $('.item_content').eq(imgSign)
-                      .children()
-                      .find('.item_date_ribbon')
-                      .find('span')
-                      .last()
-                      .text(jsonItem[imgSign].praiseCount);
-    cycles++;
-    // if (cycles==13) {
-    //  cycles=0;
-    // }
-    // alert(imgSign);
-    // imgSign++;
-    
-}
 
 
-//对象
-/*var itemDate ={
-    img:"",
-    categoryStr:"",
-    time:"",
-    desc:"",
-    commentCount:"",
-    praiseCount:""
-};
-function addDate(imgSign) {
-    var itemdate = new itemDate();
-    itemData.img = jsonItem[imgSign].imgSrc;
-    itemData.categoryStr = jsonItem[imgSign].categoryStrSrc;
-    itemData.desc = jsonItem[imgSign].descStr;
-    itemData.time = jsonItem[imgSign].timeStrSrc;
-    itemData.commentCount = jsonItem[imgSign].commentCount;
-    itemData.praiseCount = jsonItem[imgSign].praiseCount;
-}*/

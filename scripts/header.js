@@ -32,27 +32,15 @@ $(function(){
 	});
 
 
-
-	// $( ".forumNav a").fisrt().hover(function() {
-	// 	$(".logo_menu").attr('src', 'images/head_logo_memu_hover.png');	
-	// }, function() {
-	// 	$(".logo_menu").attr('src', 'images/head_logo_menu.png');
-	// });
-	// $( ".img_weibo").hover(function() {
-	// 	$(".img_weibo").attr('src', 'images/head_right_weibo_hover.png');	
-	// }, function() {
-	// 	$(".img_weibo").attr('src', 'images/head_right_weibo.png');
-	// });
-	// $( ".img_weibo").hide();
-	//  $( ".forumNav a").last().hover(function() {
-	// 	$(".logo_menu").hide();
-		// $(".logo_curiosity").attr('src', 'images/head_logo_curiosity_hover.png');
-	// });
 });
 // 全部分类隐藏显示切换
 $(function(){
 	$(".allNav_input").click(function() {
 		$(".allNav_list").toggle();
+		var H=document.documentElement.clientHeight;
+		var W=document.documentElement.clientWidth;
+		alert(H);
+		alert(W);
 	});
 });
 // 切换高度
