@@ -271,6 +271,7 @@ function divCount(TagCount,scrollCount) {
         }   
     }
 }
+
 function createTagItem(type){
 
     if (300 === type) { 
@@ -284,10 +285,9 @@ function createTagItem(type){
 
         var imgJoin = '<img src="'+imgJoinSrc+'"  class="item_join_img">';
 
-        // var timeStr = '<span>'+timeStrSrc+'</span>';
-        /*var   imgJoinRight = '<img src="'+imgJoinRightSrc+'"  class="item_join_right_img">';*/
-        var imgJoinRight ='';
-        var joinRight = '<div class="item_join_right">'+ imgJoinRight+'</div>';
+        var imgJoinRight ='<span>'+ JOIN+'</span>';`
+        var imgJoinRightTxt ='<span>'+ NEW+'</span>';
+        var joinRight = '<div class="item_join_right">'+ imgJoinRight+imgJoinRightTxt+'</div>';
 
         var imgJoinLeft = '<img src="'+imgJoinLeftSrc+'"  class="item_join_left">';
 

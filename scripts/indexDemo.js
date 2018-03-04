@@ -149,6 +149,7 @@ var categoryStrSrc = "商业";
 
 $(function(){
     divCount(16,0);
+    getIndexDate();
 });
 
 
@@ -174,20 +175,24 @@ var scrollCount=0;
 
 function createData(){
 
-            }
-            createData.prototype = {
-                img:"",
-                desc:"",
-                categoryStr:"",
-                time:"",
-                commentCount:"",
-                praiseCount:""
-            };
+}
+createData.prototype = {
+    img:"",
+    desc:"",
+    categoryStr:"",
+    time:"",
+    commentCount:"",
+    praiseCount:""
+};
 
 var arrsDate = new Array();
 
-
-for(var i=0; i<12; i++){
+function getIndexDate() {
+    $.get('http://localhost:8081/itemList', function(date) {
+        var indexDate = $.parseJSON(date);
+    });
+}
+for(var i=0; i<10; i++){
 
     var itemDate = new createData();
 
@@ -263,70 +268,81 @@ function divCount(TagCount,scrollCount) {
     }
     scrollCount+=1;
 }
+
+//item添加方法改进
 function createTagItem(type){
-
-    if (300 === type) { 
-        var imgAfter = '<img src="'+imgAfterSrc+'">';
-        var divAfterImg = '<div class="item_join_after_img">'+imgAfter+'</div>';
-        var aAfterTag = '<a href="item.html" class="item_join_after">'+divAfterImg+'</a>';
-
-        var h3Tag = '<h3>'+joinH3Str+'</h3>';
-        var pTag = '<p>'+ JoinTextStr+'</p>';
-        var divBottom  = '<div class="item_join_bottom">'+ h3Tag + pTag+'</div>';
-
-        var imgJoin = '<img src="'+imgJoinSrc+'"  class="item_join_img">';
-
-        var imgJoinRight ='';
-        var joinRight = '<div class="item_join_right">'+ imgJoinRight+'</div>';
-
-        var imgJoinLeft = '<img src="'+imgJoinLeftSrc+'"  class="item_join_left">';
-
-        var aJoinTag = '<a href="item.html">'+imgJoinLeft+joinRight+imgJoin+divBottom+'</a>'+aAfterTag;
+    if (300 === type) {
+        var aJoinTag = '<a href="item.html">'+
+                            '<img src="'+imgJoinLeftSrc+'"  class="item_join_left">'+
+                            '<div class="item_join_right">'+ 
+                                '<span> JOIN </span>'+
+                                '<span> NEW </span>'+
+                            '</div>'+
+                            '<div class="item_join_img"><img src="'+imgJoinSrc+'"></div>'+
+                            '<div class="item_join_bottom">'+
+                                '<h3>'+joinH3Str+'</h3>'+ 
+                                '<p>'+ JoinTextStr+'</p>'+
+                            '</div>'+
+                        '</a>'+
+                        '<a href="item.html" class="item_join_after">'+
+                            '<div class="item_join_after_img">'+
+                                '<img src="'+imgAfterSrc+'">'+
+                          '</div>'+
+                        '</a>';
         return '<div class="item_join">'+aJoinTag+'</div>';
-    }else{
-        // 由最里层开始添加
-        var timeStr = '<span>'+arrsDate[imgSign].time +'</span>';
-        var commentStr = '<span>'+arrsDate[imgSign].commentCount+'</span>';
-        var praiseStr = '<span>'+arrsDate[imgSign].praiseCount+'</span>'; 
-        var divTimeCommentPraise = '<div class="item_date_ribbon">'+ commentStr + praiseStr + '</div>';
-        var itemTimeDate = '';
-        
-        if(100 === type){
-            itemTimeDate = '<div class="item_date">'+ timeStr + divTimeCommentPraise+'</div>';
-        }
-        if(200 === type){
-            itemTimeDate = '<div class="item_date item_large_date">'+ timeStr + divTimeCommentPraise+'</div>';
-        }
-
-        var divTxt = '<div class="item_text">'+arrsDate[imgSign].desc+'</div>';
-
-        var divLargeTxt = '<div class="item_large_text"> <h3> <span>'+descLargeStr+' </h3> </span></div>';
-
-        var img = '<img src="'+arrsDate[imgSign].img+'">';
-        var imgLarge='<img src="'+imgLargeSrc+'">';
-        var categoryStr = '<span>'+arrsDate[imgSign].categoryStr+'</span>';
-        var divItemImg = '';
-
+    }else {
         var aTag = '';
+
+        var itemData = arrsDate[imgSign];
         if(100 === type){
-            divItemImg = '<div class="item_img">'+img+categoryStr+'</div>';
-            aTag = '<a href="item.html">'+divItemImg+divTxt+itemTimeDate+'</a>';
+            aTag = '<a href="item.html">'+
+                        '<div class="item_img">'+
+                            '<img src="'+itemData.img+'">'+
+                            '<span>'+itemData.categoryStr+'</span>'+
+                        '</div>'+
+                        '<div class="item_text">'+itemData.desc+'</div>'+
+                        '<div class="item_date">'+ 
+                            '<span>'+itemData.time +'</span>'+ 
+                            '<div class="item_date_ribbon">'+ 
+                                '<span>'+itemData.commentCount+'</span>' + 
+                                '<span>'+itemData.praiseCount+'</span>' + 
+                            '</div>'+
+                        '</div>'+
+                    '</a>';
             return '<div class="item_content">'+aTag+'</div>';
         } 
         if(200 === type){
-            divItemImg = '<div class="item_large_img">'+imgLarge+categoryStr+'</div>';
-            aTag = '<a href="item.html">'+divItemImg+divLargeTxt+itemTimeDate+'</a>';
+            aTag = '<a href="item.html">'+
+                        '<div class="item_large_img">'+
+                            '<img src="'+imgLargeSrc+'">'+
+                            '<span>'+arrsDate[imgSign].categoryStr+'</span>'+
+                        '</div>'+
+                        '<div class="item_large_text"> <h3> <span>'+descLargeStr+' </h3> </span></div>'+
+                        '<div class="item_date item_large_date">'+ 
+                            '<span>'+arrsDate[imgSign].time +'</span>'+ 
+                            '<div class="item_date_ribbon">'+ 
+                                '<span>'+arrsDate[imgSign].commentCount+'</span>' + 
+                                '<span>'+arrsDate[imgSign].praiseCount+'</span>' + 
+                            '</div>'+
+                        '</div>'+
+                    '</a>';
             return '<div class="item_content_large">'+aTag+'</div>';
-        } 
+        }
     }
 
 }
+
+
+
+
+
+
                  
 $(function () {
     $('.showmore_btn').click(function() {
         $('.loader_bd').hide();
         $('.loading').show();
-        setTimeout("loadingTime(16)",3000);   
+        setTimeout('loadingTime(16)',3000);   
         scrollCount=1;
     });
 });
@@ -363,9 +379,9 @@ window.onscroll = function () {
 var tur = true;
 var scrollTop=$(window).scrollTop();
 var contentHeigth = $('#content').height();
-console.log('contentHeigth的值为'+contentHeigth);
-console.log('scrollTop的值为'+scrollTop);
-console.log('scrollCount的值为'+scrollCount);
+// console.log('contentHeigth的值为'+contentHeigth);
+// console.log('scrollTop的值为'+scrollTop);
+// console.log('scrollCount的值为'+scrollCount);
     if (true) {
         if (scrollCount>=4) {
             $('.loading').hide();
