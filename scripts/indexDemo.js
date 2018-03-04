@@ -149,11 +149,15 @@ var categoryStrSrc = "商业";
 
 $(function(){
     divCount(16,0);
-    getIndexDate();
+    // getIndexDate();
 });
 
 
-
+/*function getIndexDate() {
+    $.get('http://localhost:8081/itemList', function(date) {
+        var indexDate = $.parseJSON(date);
+    });
+}*/
 function ItemDate(){
 
 }
@@ -187,12 +191,8 @@ createData.prototype = {
 
 var arrsDate = new Array();
 
-function getIndexDate() {
-    $.get('http://localhost:8081/itemList', function(date) {
-        var indexDate = $.parseJSON(date);
-    });
-}
-for(var i=0; i<10; i++){
+
+for(var i=0; i<12; i++){
 
     var itemDate = new createData();
 
@@ -292,20 +292,18 @@ function createTagItem(type){
         return '<div class="item_join">'+aJoinTag+'</div>';
     }else {
         var aTag = '';
-
-        var itemData = arrsDate[imgSign];
         if(100 === type){
             aTag = '<a href="item.html">'+
                         '<div class="item_img">'+
-                            '<img src="'+itemData.img+'">'+
-                            '<span>'+itemData.categoryStr+'</span>'+
+                            '<img src="'+arrsDate[imgSign].img+'">'+
+                            '<span>'+arrsDate[imgSign].categoryStr+'</span>'+
                         '</div>'+
-                        '<div class="item_text">'+itemData.desc+'</div>'+
+                        '<div class="item_text">'+arrsDate[imgSign].desc+'</div>'+
                         '<div class="item_date">'+ 
-                            '<span>'+itemData.time +'</span>'+ 
+                            '<span>'+arrsDate[imgSign].time +'</span>'+ 
                             '<div class="item_date_ribbon">'+ 
-                                '<span>'+itemData.commentCount+'</span>' + 
-                                '<span>'+itemData.praiseCount+'</span>' + 
+                                '<span>'+arrsDate[imgSign].commentCount+'</span>' + 
+                                '<span>'+arrsDate[imgSign].praiseCount+'</span>' + 
                             '</div>'+
                         '</div>'+
                     '</a>';
