@@ -72,10 +72,10 @@ $(document).ready(function () {
             $(".imgRoll .num li").eq(i).addClass("on").siblings().removeClass("on");
         }
     }
-
-    //页面刷新回到顶部
-    /* setTimeout(() => window.scrollTo(0,0), 50)*/
 });
+//页面刷新回到顶部
+/* setTimeout(() => window.scrollTo(0,0), 50)*/
+
 function addTag(tagClass,tag,tagContent) {
 　　var div = document.createElement("div");
 　　div.setAttribute("tagClass", "tag");
@@ -149,19 +149,16 @@ var categoryStrSrc = "商业";
 
 $(function(){
     divCount(16,0);
-    // getIndexDate();
 });
+/* $.ajaxSetup({  
+    async : false  
+}); */
 
 
-/*function getIndexDate() {
-    $.get('http://localhost:8081/itemList', function(date) {
-        var indexDate = $.parseJSON(date);
-    });
-}*/
-function ItemDate(){
+function ItemData(){
 
 }
-ItemDate.prototype ={
+ItemData.prototype ={
     img:"",
     categoryStr:"",
     time:"",
@@ -189,12 +186,12 @@ createData.prototype = {
     praiseCount:""
 };
 
-var arrsDate = new Array();
+var arrsData = new Array();
 
 
 for(var i=0; i<12; i++){
 
-    var itemDate = new createData();
+    var itemData = new createData();
 
 
     var imgArrs = imgArrays[i];
@@ -210,15 +207,15 @@ for(var i=0; i<12; i++){
     var praiseCountArrs = jsonItem[i].praiseCountSrc;
 
 
-    itemDate.img = imgArrs;
-    itemDate.desc = descArrs;
+    itemData.img = imgArrs;
+    itemData.desc = descArrs;
 
-    itemDate.time = timeArrs;
-    itemDate.categoryStr = categoryStrArrs;
+    itemData.time = timeArrs;
+    itemData.categoryStr = categoryStrArrs;
 
-    itemDate.commentCount = commentCountArrs;
-    itemDate.praiseCount = praiseCountArrs;
-    arrsDate.push(itemDate);
+    itemData.commentCount = commentCountArrs;
+    itemData.praiseCount = praiseCountArrs;
+    arrsData.push(itemData);
 
 }
 
@@ -226,116 +223,127 @@ for(var i=0; i<12; i++){
 function divCount(TagCount,scrollCount) {
     var $itemContent ='';
     var $item = $('.itemLear');
-    if (scrollCount===0) {
-        for (var j = 0; j < 5; j++) {
-            if (j===4) {
-                $itemContent=createTagItem(300);
-            }else{
-                $itemContent=createTagItem(100);
-                /*alert(imgSign);*/
+/*    function getindexData() {*/
+        $.get('http://localhost:8081/itemList', function(data) {
+            var serverData = JSON.parse(data);
+            console.log(serverData);
+            if (scrollCount===0) {
+                for (var j = 0; j < 5; j++) {
+                    if (j===4) {
+                        $itemContent=createTagItem(300,serverData);
+                    }else{
+                        $itemContent=createTagItem(100,serverData);
+                    }
+                    $item.before($itemContent);
+                    imgSign++;
+                }
+            TagCount-=5;
             }
-            $item.before($itemContent);
-            imgSign++;
-        }
-    TagCount-=5;
-    }
-    for (var i = 0; i < TagCount; i++) {
-        var typeVal = Math.random();
-        if (typeVal<=0.8) {
-            $itemContent=createTagItem(100);
-            $item.before($itemContent);
-            imgSign++;
-            sign += 1;
-        }else{
-            if (sign==3) {
-                $itemContent=createTagItem(100);
-                $item.before($itemContent);
+            for (var i = 0; i < TagCount; i++) {
+                var typeVal = Math.random();
+                if (typeVal<=0.8) {
+                    $itemContent=createTagItem(100,serverData);
+                    $item.before($itemContent);
+                    imgSign++;
+                    sign += 1;
+                }else{
+                    if (sign==3) {
+                        $itemContent=createTagItem(100,serverData);
+                        $item.before($itemContent);
 
-                imgSign++;
-                sign += 1;
-            }else{
-                $itemContent=createTagItem(200);
-                $item.before($itemContent);
-                sign += 2;
+                        imgSign++;
+                        sign += 1;
+                    }else{
+                        $itemContent=createTagItem(200,serverData);
+                        $item.before($itemContent);
+                        sign += 2;
+                    }
+                }
+                if (sign===4) {
+                    sign=0;
+                }
+                if (imgSign==10) {
+                    imgSign=0;
+                }      
             }
-        }
-        if (sign===4) {
-            sign=0;
-        }
-        if (imgSign==12) {
-            imgSign=0;
-        }      
-    }
-    scrollCount+=1;
+            scrollCount+=1;
+            //item添加方法改进
+            function createTagItem(type,serverData){
+                var itemData = serverData[imgSign];
+                if (300 === type) {
+                    var aJoinTag = '<a href="item.html">'+
+                                        '<img src="'+imgJoinLeftSrc+'"  class="item_join_left">'+
+                                        '<div class="item_join_right">'+ 
+                                            '<span> JOIN </span>'+
+                                            '<span> NEW </span>'+
+                                        '</div>'+
+                                        '<div class="item_join_img"><img src="'+imgJoinSrc+'"></div>'+
+                                        '<div class="item_join_bottom">'+
+                                            '<h3>'+joinH3Str+'</h3>'+ 
+                                            '<p>'+ JoinTextStr+'</p>'+
+                                        '</div>'+
+                                    '</a>'+
+                                    '<a href="item.html" class="item_join_after">'+
+                                        '<div class="item_join_after_img">'+
+                                            '<img src="'+imgAfterSrc+'">'+
+                                      '</div>'+
+                                    '</a>';
+                    return '<div class="item_join">'+aJoinTag+'</div>';
+                }else {
+                    var aTag = '';
+                    if(100 === type){
+                        aTag = '<a href="item.html">'+
+                                    '<div class="item_img">'+
+                                        '<img src="'+itemData.imgSrc+'">'+
+                                        '<span>'+arrsData[imgSign].categoryStrSrc+'</span>'+
+                                    '</div>'+
+                                    '<div class="item_text">'+itemData.desc+'</div>'+
+                                    '<div class="item_data">'+ 
+                                        '<span>'+itemData.publishTime  +'</span>'+ 
+                                        '<div class="item_data_ribbon">'+ 
+                                            '<span>'+itemData.commentCount+'</span>' + 
+                                            '<span>'+itemData.praiseCount+'</span>' + 
+                                        '</div>'+
+                                    '</div>'+
+                                '</a>';
+                        return '<div class="item_content">'+aTag+'</div>';
+                    } 
+                    if(200 === type){
+                        aTag = '<a href="item.html">'+
+                                    '<div class="item_large_img">'+
+                                        '<img src="'+imgLargeSrc+'">'+
+                                        '<span>'+arrsData[imgSign].categoryStrSrc+'</span>'+
+                                    '</div>'+
+                                    '<div class="item_large_text"> <h3> <span>'+descLargeStr+' </h3> </span></div>'+
+                                    '<div class="item_data item_large_data">'+ 
+                                        '<span>'+arrsData[imgSign].publishTime  +'</span>'+ 
+                                        '<div class="item_data_ribbon">'+ 
+                                            '<span>'+arrsData[imgSign].commentCount+'</span>' + 
+                                            '<span>'+arrsData[imgSign].praiseCount+'</span>' + 
+                                        '</div>'+
+                                    '</div>'+
+                                '</a>';
+                        return '<div class="item_content_large">'+aTag+'</div>';
+                    }
+                }
+            }
+        });
+    /*}*/
 }
 
-//item添加方法改进
-function createTagItem(type){
-    if (300 === type) {
-        var aJoinTag = '<a href="item.html">'+
-                            '<img src="'+imgJoinLeftSrc+'"  class="item_join_left">'+
-                            '<div class="item_join_right">'+ 
-                                '<span> JOIN </span>'+
-                                '<span> NEW </span>'+
-                            '</div>'+
-                            '<div class="item_join_img"><img src="'+imgJoinSrc+'"></div>'+
-                            '<div class="item_join_bottom">'+
-                                '<h3>'+joinH3Str+'</h3>'+ 
-                                '<p>'+ JoinTextStr+'</p>'+
-                            '</div>'+
-                        '</a>'+
-                        '<a href="item.html" class="item_join_after">'+
-                            '<div class="item_join_after_img">'+
-                                '<img src="'+imgAfterSrc+'">'+
-                          '</div>'+
-                        '</a>';
-        return '<div class="item_join">'+aJoinTag+'</div>';
-    }else {
-        var aTag = '';
-        if(100 === type){
-            aTag = '<a href="item.html">'+
-                        '<div class="item_img">'+
-                            '<img src="'+arrsDate[imgSign].img+'">'+
-                            '<span>'+arrsDate[imgSign].categoryStr+'</span>'+
-                        '</div>'+
-                        '<div class="item_text">'+arrsDate[imgSign].desc+'</div>'+
-                        '<div class="item_date">'+ 
-                            '<span>'+arrsDate[imgSign].time +'</span>'+ 
-                            '<div class="item_date_ribbon">'+ 
-                                '<span>'+arrsDate[imgSign].commentCount+'</span>' + 
-                                '<span>'+arrsDate[imgSign].praiseCount+'</span>' + 
-                            '</div>'+
-                        '</div>'+
-                    '</a>';
-            return '<div class="item_content">'+aTag+'</div>';
-        } 
-        if(200 === type){
-            aTag = '<a href="item.html">'+
-                        '<div class="item_large_img">'+
-                            '<img src="'+imgLargeSrc+'">'+
-                            '<span>'+arrsDate[imgSign].categoryStr+'</span>'+
-                        '</div>'+
-                        '<div class="item_large_text"> <h3> <span>'+descLargeStr+' </h3> </span></div>'+
-                        '<div class="item_date item_large_date">'+ 
-                            '<span>'+arrsDate[imgSign].time +'</span>'+ 
-                            '<div class="item_date_ribbon">'+ 
-                                '<span>'+arrsDate[imgSign].commentCount+'</span>' + 
-                                '<span>'+arrsDate[imgSign].praiseCount+'</span>' + 
-                            '</div>'+
-                        '</div>'+
-                    '</a>';
-            return '<div class="item_content_large">'+aTag+'</div>';
+
+ /* function getindexData() {
+    $.ajax({
+        url: 'http://localhost:8081/itemList',
+        async: false,
+        success: function(data){
+            indexData = JSON.parse(data);
         }
-    }
+    });
+    return indexData;
+}*/
 
-}
-
-
-
-
-
-
-                 
+            
 $(function () {
     $('.showmore_btn').click(function() {
         $('.loader_bd').hide();
@@ -371,15 +379,12 @@ function loadingTime(counts)
 //             alert(scrollCount);
 //         }
         
-//     }); 
+//     });  
 // });
 window.onscroll = function () {
 var tur = true;
 var scrollTop=$(window).scrollTop();
 var contentHeigth = $('#content').height();
-// console.log('contentHeigth的值为'+contentHeigth);
-// console.log('scrollTop的值为'+scrollTop);
-// console.log('scrollCount的值为'+scrollCount);
     if (true) {
         if (scrollCount>=4) {
             $('.loading').hide();
