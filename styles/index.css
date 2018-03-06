@@ -37,15 +37,18 @@ body{background-color: #eee}
 	width: 90px;
 	height: 120px;
 	background-color: 	#000000;
-	/*z-index: 1000; */
 	position: absolute;
 	left: 0; 
+}
+#header .logo a:hover{
+	color: 	#000000 !important;
 }
 #header .logo_img_small{
 	display: inline-block;
     margin: 14px 0 0 30px;
     width: 14px;
     vertical-align: middle;
+	transition: all 1s ease-in-out;	
 }
 #header .logo_txt_small{
 	display: inline-block;
@@ -55,12 +58,12 @@ body{background-color: #eee}
 }
 #header .logo_img{
 	width: 30px;
-	height: 65px;
-	padding: 0 30px;	
+	padding: 5px 30px 0 30px;
+	transform: scale(1);
+	transition: all 1s ease-in-out;	
 }
 #header .logo_txt{
 	width: 50px;
-	height: 35px;
 	padding:10px 20px;
 }
 #header .forumNav{
@@ -217,22 +220,8 @@ body{background-color: #eee}
 	position: absolute;
 	top: 50%;
 	margin: -6px 0 0 15px;
-/*	height: 100%;
-	line-height: 100%;*/
 }
 
-/*#header .section_right a::after{
-	position: absolute;
-    right: 0;
-    width: 1px;
-    height: 80px;
-    background-color: #363636;
-    content: "";
-	
-}*/
-/*#header .section_right a:nth-child(2){
-	border-right: 1px solid #363636;
-}*/
 #header .section_right .aboutUs_img img{
 	padding-right: 10px;
 }
@@ -499,20 +488,6 @@ body{background-color: #eee}
 
 
 
-
-
-
-/*#content .itemOne, .itemTwo, .itemThree, .itemFour{
-	width: 245px;
-	height: 280px;
-	float: left;
-	margin-right: 10px;
-	position: relative;
-	background-color: white;
-}*/
-
-
-
 /*项目新闻*/
 #content .item{
 	width: 100%;
@@ -528,12 +503,12 @@ body{background-color: #eee}
 	overflow: hidden;
 }
 #content .item_img>img,.item_large_img>img,.item_join_img>img{
-		transform: scale(1);
-		transition: all 1s;
+	transform: scale(1);
+	transition: all 1s;
 }
 #content .item_img>img:hover,.item_large_img>img:hover,.item_join_img>img:hover{
 	transform: scale(1.05);
-	transition: all 1s;
+	/*transition: all 1s;*/
 	transition: all 1s ease-in-out;
 }
 #content .item_img span{
@@ -558,37 +533,37 @@ body{background-color: #eee}
 	line-height: 1.5;
 	color: #0f1419;
 }
-#content .item_date{
+#content .item_data{
 	width: 245px;
 	height: 40px;
 }
-#content .item_date>span{
+#content .item_data>span{
 	float: left;
 	color: #666;
 	font-size: 12px;
 	margin: 11px 0 11px 10px;
 }
-#content .item_date_ribbon{
+#content .item_data_ribbon{
 	float: right;
 	color: #d1d1d1;
 	font-size: 12px;
 	margin: 9px 5px;
 }
-#content .item_date_ribbon span:first-child{
+#content .item_data_ribbon span:first-child{
 	background: url("../images/comment.png") no-repeat scroll left center;
 	padding-left: 20px;
 	margin-right: 10px;
 	/*line-height: 14px; */
 	background-size: 14px 14px;
 }
-#content .item_date_ribbon span:last-child{
+#content .item_data_ribbon span:last-child{
 	background: url("../images/praise.png") no-repeat scroll left center;
 	padding-left: 20px;
 	margin-right: 10px;
 	/*line-height: 14px; */
 	background-size: 14px 14px;
 }
-/*#content .item_date_ribbon span img{
+/*#content .item_data_ribbon span img{
 	vertical-align: middle;
 	width: 14px;
 	height: 14px;
@@ -685,7 +660,7 @@ body{background-color: #eee}
 	/*display: none;*/
     /*display: table-row-group;*/
 }
-#content .item .item_large_date{
+#content .item .item_large_data{
 	position: absolute;
 	bottom: 0;
 } 
@@ -1167,7 +1142,7 @@ to {height: 16px; width: 16px; }
     margin: 0 10px;
 }
 #content .item .item_join_bottom p{
-	margin: 8px 0 0;
+	margin: 8px 10px;
     color: #ccc;
     font-size: 14px;
     line-height: 22px;

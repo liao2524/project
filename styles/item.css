@@ -64,7 +64,7 @@
     overflow: hidden;
     border-radius: 50%;
 }
-.author_share .author .name,.author_share .author .date{
+.author_share .author .name,.author_share .author .data{
 	float: left;
     overflow: hidden;
     margin-left: 12px;
@@ -73,7 +73,7 @@
     font-size: 14px;
     line-height: 15px;
 }
-.author_share .author .date{
+.author_share .author .data{
     margin-top: 4px;
     color: #a6a6a6;
 }

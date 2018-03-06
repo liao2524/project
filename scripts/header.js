@@ -26,7 +26,7 @@ $(function(){
 		$(".QR_code").hide();
 	});
 	$( ".QR_code").hover(function() {
-		$(".QR_code").stop(true);	
+		$(".QR_code").show();	
 	}, function() {
 		$(".QR_code").hide('slow');
 	});
@@ -39,8 +39,6 @@ $(function(){
 		$(".allNav_list").toggle();
 		var H=document.documentElement.clientHeight;
 		var W=document.documentElement.clientWidth;
-		alert(H);
-		alert(W);
 	});
 });
 // 切换高度
@@ -49,33 +47,31 @@ $(function () {
 		var scrollTop=$(window).scrollTop();
 		$(".allNav_list").css('display', 'none');
 		if (scrollTop==0) {
-			// alert(scrollTop);
-			$(".logo").css({
-				height: '120',
-				width: '90'
-			});
-			$(".logo").animate({
+			
+			$(".logo").stop(true).animate({
 				height: 120,
 				width: 90},
-				100);
+				0);
 			$(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
 			$(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');	
-			$("#header").animate({
+			$("#header").stop(true).animate({
 				height: 80},
 				500);
-			// $(".logo a img").first().toggleClass('logo_img');
-			// $(".logo a img").last().toggleClass('logo_txt');
-			// $(".logo a img").first().addClass('logo_img').removeClass('logo_img_small');
-			// $(".logo a img").last().addClass('logo_txt').removeClass('logo_txt_small');
 		}else{
-			$("#header").height(60);
-			// $("#header").animate({
-			// 	height: 60},
-			// 	500);
+			$("#header").stop(true).animate({
+				height: 60},
+				500);
+			$("#header").animate({
+				height: 60},
+				500);
+				/*$(".logo").css({
+					height: '60',
+					width: '120'
+				});*/
 			$(".logo").animate({
 				height: 60,
 				width: 120},
-				500);
+				10);
 			// $(".logo a img").first().toggleClass('logo_img_small');
 			// $(".logo a img").last().toggleClass('logo_txt_small');
 			$(".logo a img").first().addClass('logo_img_small').removeClass('logo_img');
