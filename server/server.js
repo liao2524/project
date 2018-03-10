@@ -71,9 +71,9 @@ function createIndexData(){
 
 	for(var i=0; i<5; i++){
 		var loopEntry = new LoopEntry();
-		loopEntry.imgUrl = imgArrays[rnd(0, 5)];
-		loopEntry.category = categoryArrs[rnd(0, 5)];
-		loopEntry.desc = descArrays[rnd(0, 5)];
+		loopEntry.imgUrl = imgArrays[i];
+		loopEntry.category = categoryArrs[i];
+		loopEntry.desc = descArrays[i];
 
 		loopEntrylist.push(loopEntry);
 	}
@@ -92,13 +92,13 @@ function createIndexData(){
 	for(var i=0; i<4; i++){
 		var itemData = new ItemData();
 
-		var random = rnd(0,4);
+		var random = i;
 		var imgRandomSrc = imgArrays[random];
 		var descRandom = descArrays[random];
 
 		itemData.imgSrc = imgRandomSrc;
 		itemData.desc = descRandom;
-		itemData.publishTime = 2018-01-1;//毫秒做单位
+		itemData.publishTime = 1509441932132;//毫秒做单位
 		itemData.commentCount = 10;
 		itemData.praiseCount = 15;
 		itemData.type = 100;//搞不清楚转换为json字符串的时候没有出现这个值，所以先默认赋值
@@ -155,7 +155,7 @@ function createData(arrsSize, index) {
 
 		itemData.imgSrc = imgRandomSrc;
 
-		itemData.publishTime = 2018-01-1;//毫秒做单位
+		itemData.publishTime = 1509441932132;//毫秒做单位
 		itemData.commentCount = 10;
 		itemData.praiseCount = 15;
 		itemData.type = 100;//搞不清楚转换为json字符串的时候没有出现这个值，所以先默认赋值		
