@@ -370,7 +370,7 @@ function roll() {
     return false;
     });
     $('.imgRoll_list').mouseup(function() {
-        var X = moveX-downX+leftX;
+        var X = moveX-downX;
         // alert(X);
         if(X>=-100&&X<=-20){
             move();
