@@ -357,25 +357,26 @@ function roll() {
     //鼠标摁下移动操作
     var moveX = '';
     var downX = '';
+    var leftX = parseInt($(".imgRoll_list").css("left"));
     $('.imgRoll_list').mousedown(function(e){
-        clearInterval(t);//鼠标摁下时清除定时器
+        // clearInterval(t);//鼠标摁下时清除定时器
         downX = e.pageX;
-        var leftX = parseInt($(".imgRoll_list").css("left"));
-        $(document).bind('mousemove', function(e) {
+        // alert(leftX);
+        $('.imgRoll_list').bind('mousemove', function(e) {
             moveX = e.pageX;
             var endX = moveX-downX+leftX;
-            $(".imgRoll_list").css("left",endX+"px");   
+            $(".imgRoll_list").css("left",endX);   
         });
     return false;
     });
     $('.imgRoll_list').mouseup(function() {
-        var X = moveX-downX;
-        // alert(moveX-downX);
-        if(X>-100&&move<=0){
-            $(".imgRoll_list").css("left",X+"px");
+        var X = moveX-downX+leftX;
+        // alert(X);
+        if(X>=-100&&X<=-20){
+            move();
         }
-        if (X>0&&move<=100) {
-            $(".imgRoll_list").css("left",X+"px"); 
+        if (X>20&&X<=100) {
+            move();
         }
         if (X>100) {
             i--;
@@ -385,6 +386,10 @@ function roll() {
             i++;
             move(); 
         }
-        $(document).unbind('mousemove');
+        $('.imgRoll_list').unbind('mousemove');
+    });
+    $('.imgRoll_list').mouseover(function() {
+        move();
+        $('.imgRoll_list').unbind('mousemove');
     });
 }
