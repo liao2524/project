@@ -36,7 +36,12 @@ var imgArrays = [
 "http://img.qdaily.com/article/article_show/201710301359295QmfD8yiJvbNl6Ea.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1",	
 "http://img.qdaily.com/article/article_show/20171030225326muNfc0HEQsnJeDb6.jpg?imageMogr2/auto-orient/thumbnail/!245x185r/gravity/Center/crop/245x185/quality/85/format/webp/ignore-error/1"];
 
-
+var rollImgArrays = [
+"http://img.qdaily.com/article/banner/20180313215322iDSEY6M3hB1pT0co.jpg?ima…!755x450r/gravity/Center/crop/755x450/quality/85/format/jpg/ignore-error/1",
+"http://img.qdaily.com/article/banner/201803130838222V3NDQjTehAcau9p.jpg?imageMogr2/auto-orient/thumbnail/!755x450r/gravity/Center/crop/755x450/quality/85/format/jpg/ignore-error/1",	
+"http://img.qdaily.com/article/banner/20180313161217Q3hG2OreRDsmgUtS.jpg?imageMogr2/auto-orient/thumbnail/!755x450r/gravity/Center/crop/755x450/quality/85/format/jpg/ignore-error/1",	
+"http://img.qdaily.com/article/article_show/20180307164359xKJ74Mt8zBs0AFrp.jpg?imageMogr2/auto-orient/thumbnail/!1200x380r/gravity/Center/crop/1200x380/quality/85/format/jpg/ignore-error/1",	
+"http://img.qdaily.com/article/banner/20180314144226EMPCIULdw2NYrkJH.jpg?imageMogr2/auto-orient/thumbnail/!755x450r/gravity/Center/crop/755x450/quality/85/format/jpg/ignore-error/1"];
 function LoopEntry(){
 
 }
@@ -71,7 +76,7 @@ function createIndexData(){
 
 	for(var i=0; i<5; i++){
 		var loopEntry = new LoopEntry();
-		loopEntry.imgUrl = imgArrays[i];
+		loopEntry.imgUrl = rollImgArrays[i];
 		loopEntry.category = categoryArrs[i];
 		loopEntry.desc = descArrays[i];
 
@@ -155,7 +160,7 @@ function createData(arrsSize, index) {
 
 		itemData.imgSrc = imgRandomSrc;
 
-		itemData.publishTime = 1509441932132;//毫秒做单位
+		itemData.publishTime = 20180101   ;//毫秒做单位
 		itemData.commentCount = 10;
 		itemData.praiseCount = 15;
 		itemData.type = 100;//搞不清楚转换为json字符串的时候没有出现这个值，所以先默认赋值		

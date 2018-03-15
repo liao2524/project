@@ -291,6 +291,7 @@ body{background-color: #eee}
 }
 .imgRoll .imgRoll_list li{
 	float:left;
+	position: relative;
 }
 #content .imgRoll .num {
 	 position:absolute; 
@@ -336,7 +337,7 @@ body{background-color: #eee}
 	display:block;
 }
 
-#content .imgRoll .imgRoll_text{
+.imgRoll_text{
 	width: 731px;
 	height: 120px;
 	padding: 0 12px 12px;
@@ -344,13 +345,11 @@ body{background-color: #eee}
 	left: 0;
 	top: 290px;
 }
-#content .imgRoll .imgRoll_text li{
-	display: none;
-}
-#content .imgRoll .imgRoll_text li.current{
+
+.imgRoll_text li.current{
 	display: block;
 }
-#content .imgRoll .imgRoll_text li span{
+.imgRoll_text>span{
 	box-sizing: border-box;
 	height: 20px;
     background-color: #000;
@@ -359,7 +358,7 @@ body{background-color: #eee}
     line-height: 22px;
     padding: 4px 5px;
 }
-#content .imgRoll .imgRoll_text h3{
+.imgRoll_text h3{
 	margin-top: 10px;: 
 }
 #content .imgRoll .imgRoll_text h3>span{

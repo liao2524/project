@@ -17,7 +17,6 @@ var categoryStrSrc = "美图投资的";
 
 var counts="";
 var itemSign=0;
-var cycles=0; 
 var sign = 0;
 var scrollCount=0;
 
@@ -30,19 +29,16 @@ $(document).ready(function () {
     divCount(16,0);
 
 
-
-    
-
     window.onscroll = function () {
     var tur = true;
     var scrollTop=$(window).scrollTop();
     var contentHeigth = $('#content').height();
         if (true) {
             if (scrollCount>=4) {
-                $('.loading').hide();
-                $('.loader_bd').show();  
-            }else if(scrollTop>contentHeigth&&scrollCount<4){
-                // setTimeout("divCount(5,1)",1000);
+                /*$('.loading').hide();
+                $('.loader_Txt').show();  */
+            }else if(scrollTop>contentHeigth-300&&scrollCount<4){
+                setTimeout('divCount(8,1)',1000);
                 scrollCount+=1; 
             }
             $(".allNav_list").css('display', 'none');
@@ -50,16 +46,12 @@ $(document).ready(function () {
         } 
     };
 
-    $(".imgRoll .imgRoll_text li").first().addClass("current");
 
     $('.showmore_btn').click(function() {
-        $('.loader_bd').hide();
-        $('.loading').show();
-        setTimeout('loadingTime(16)',3000);   
+        /*$('.loader_Txt').hide();
+        $('.loading').show();*/
+        setTimeout('divCount(16,1)',3000);   
         scrollCount=1;
-        for (var i = 1; i < 5; i++) {
-            
-        }
     });
 });
 
@@ -67,71 +59,81 @@ $(document).ready(function () {
 
 
 
-
+/*
 function loadingTime(counts)
 {   
     divCount(counts,1);
     $('.loading').hide();
-}
+}*/
 
 
 function divCount(TagCount,scrollCount) {
     $.get('http://localhost:8081/indexData', function(data) {
         var serverData = JSON.parse(data);
         var itemDateList = serverData.itemDataList  ;  //获取item数据
-        var rollDataList = serverData.loopEntrylist;   //获取轮播图数据  
-        for (var i = 0; i < rollDataList.length; i++) {
-            var rollData =rollDataList[i];
-            addRollData(rollData);
-        }
-        for (var j = 0; j < TagCount; j++) {
-            var typeVal = Math.random();
-            if(j<4){
-                $itemContent=createTagItem(100,itemDateList);
-            }
-            if (j===4) {
-                $itemContent=createTagItem(300,itemDateList);
-            }
+        var rollDataList = serverData.loopEntrylist;   //获取轮播图数据
+        rollDataManage(rollDataList);                  //轮播图数据处理
+        itemDataManage(TagCount,itemDateList,scrollCount);         //item数据处理
 
-            if (typeVal<=0.8&&j>4) {
-                $itemContent=createTagItem( 100,itemDateList);
-                sign += 1;
-            }else if(j>4){
-                if (sign==3) {
-                    $itemContent=createTagItem(100,itemDateList);
-                    sign += 1;
-                }else{
-                    $itemContent=createTagItem(200,itemDateList);
-                    sign += 2;
-                }
-            }
-            if (itemSign===4) {
-                itemSign=0;
-            }
-            if (sign===4) {
-                sign=0;
-            }     
-        }
-        scrollCount+=1;
-        //item数添加到div里面
-        function createTagItem(type,itemDateList){
-            var itemData = itemDateList[itemSign];
-            /*console.log(itemData);*/
-            if(100 === type){
-                 createNormalItem(itemData);
-                 itemSign++; 
-            } 
-            if(200 === type){
-                 createLagerItem(itemData);
-            }
-            if (300 === type) {
-                createItemJoin();
-            }
-        }
-        //轮播图       
-        roll();
     });
 }
+
+
+
+function rollDataManage(rollDataList) {
+    for (var i = 0; i < rollDataList.length; i++) {
+        var rollData =rollDataList[i];
+        addRollData(rollData);
+    }
+    roll();
+  } 
+
+function itemDataManage(TagCount,itemDateList,scrollCount) {
+    for (var j = 0; j < TagCount; j++) {
+        var typeVal = Math.random();
+        if(j<4){
+            $itemContent=createTagItem(100,itemDateList);
+        }
+        if (j===4&&scrollCount===0) {
+            $itemContent=createTagItem(300,itemDateList);
+        }
+
+        if (typeVal<=0.8&&j>4) {
+            $itemContent=createTagItem( 100,itemDateList);
+            sign += 1;
+        }else if(j>4){
+            if (sign==3) {
+                $itemContent=createTagItem(100,itemDateList);
+                sign += 1;
+            }else{
+                $itemContent=createTagItem(200,itemDateList);
+                sign += 2;
+            }
+        }
+        if (itemSign===4) {
+            itemSign=0;
+        }
+        if (sign===4) {
+            sign=0;
+        }     
+    }
+    scrollCount+=1;
+    //item数添加到div里面
+    function createTagItem(type,itemDateList){
+        var itemData = itemDateList[itemSign];
+        if(100 === type){
+             createNormalItem(itemData);
+             itemSign++; 
+        } 
+        if(200 === type){
+             createLagerItem(itemData);
+        }
+        if (300 === type) {
+            createItemJoin();
+        }
+    }
+}
+
 
 function createNormalItem(itemData) {
     var $item = $('.itemLear');
@@ -199,15 +201,14 @@ function createItemJoin() {
 
 function addRollData(rollData) {
     var $ulImg = $('.imgRoll_list');
-    var $ulTxt = $('.imgRoll_text');
-    var $imgList = '<li><img src="'+ rollData.imgUrl +'" alt="（暂时没有）图二描述"></li>';
-    var $txtList =' <li><span>'+rollData.category+'</span>'+
-                    '<h3>'+
-                        '<span>'+rollData.desc+'</span>'+
-                    '</h3>'+
-                '</li>';
+    var $imgList = '<li><img src="'+ rollData.imgUrl +'" alt="（暂时没有）图二描述">'+
+                        ' <div class="imgRoll_text"><span>'+rollData.category+'</span>'+
+                                            '<h3>'+
+                                                '<span>'+rollData.desc+'</span>'+
+                                            '</h3>'+
+                            '</div>'+
+                    '</li>';
     $ulImg.append($imgList);
-    $ulTxt.append( $txtList);
 }
 
 
@@ -248,6 +249,9 @@ function headerChange() {
     $(".allNav_input").click(function() {
         $(".allNav_list").toggle();
     });
+
+
+
     // 切换高度
     var fs = true;
     $(window).scroll(function() {
@@ -282,12 +286,12 @@ function headerChange() {
 }
 
 
-
+//轮播图相关运动
 function roll() {                               
-    var i = 0;
+    var liIndex = 0;
     var clone = $(".imgRoll .imgRoll_list li").first().clone();//克隆第一张图片
     $(".imgRoll .imgRoll_list").append(clone);//复制到列表最后
-    var size = 6;
+    var size = 6;  //多少个li
     //指示原点光标
     for (var j = 0; j < size-1; j++) {
         $(".imgRoll .num").append("<li></li>");
@@ -297,17 +301,15 @@ function roll() {
 
     /*自动轮播*/
 
-    var t = setInterval(function () { i++; move();},2000);
+    var t = setInterval(function () { liIndex++; move();},2000);
 
     /*鼠标悬停事件*/
 
     $(".imgRoll").hover(function () {
         clearInterval(t);//鼠标悬停时清除定时器
     }, function () {
-        t = setInterval(function () { i++; move(); }, 2000); //鼠标移出时清除定时器
+        t = setInterval(function () { liIndex++; move(); }, 2000); //鼠标移出时清除定时器
     });
-
-
 
 
     /*鼠标滑入原点光标事件*/
@@ -315,7 +317,7 @@ function roll() {
     $(".imgRoll .num li").hover(function () {
 
         var index = $(this).index();//获取当前索引值
-        i = index;
+        liIndex = index;
         $(".imgRoll .imgRoll_list").stop().animate({ left: -index * 755 }, 500);
         $(this).addClass("on").siblings().removeClass("on");
     });
@@ -324,67 +326,73 @@ function roll() {
 
     /*向左按钮*/
     $(".imgRoll .btn_l").click(function () {
-        i--;
-        move();
+        prevItem();
     });
 
     
     /*向右按钮*/
     $(".imgRoll .btn_r").click(function () {
-        i++;
-        move();
+        nextItem();
     });
+    function prevItem() {
+        liIndex--;
+        move();
+    }
+    function nextItem() {
+        liIndex++;
+        move();
+    }
 
     /*移动事件*/
     function move() {
-        if (i == size) {  
+        if (liIndex == size) {  
             $(".imgRoll .imgRoll_list").css({ left: 0 });
-            i = 1;
+            liIndex = 1;
         }
-        if (i == -1) {
+        if (liIndex == -1) {
              $(".imgRoll .imgRoll_list").css({ left : -(size - 1) * 755 });
-            i = size - 2;
+            liIndex = size - 2;
         }
-        $(".imgRoll .imgRoll_list").stop().animate({ left: -i * 755 }, 500);
+        $(".imgRoll .imgRoll_list").stop().animate({ left: -liIndex * 755 }, 500);
 
-        if (i == size - 1) {
+        if (liIndex == size - 1) {
             $(".imgRoll .num li").eq(0).addClass("on").siblings().removeClass("on");
         } else {
-            $(".imgRoll .num li").eq(i).addClass("on").siblings().removeClass("on");
+            $(".imgRoll .num li").eq(liIndex).addClass("on").siblings().removeClass("on");
         }
     }
 
     //鼠标摁下移动操作
-    var moveX = '';
-    var downX = '';
-    var leftX = parseInt($(".imgRoll_list").css("left"));
+    var moveX = 0;
+    var downX = 0;
     $('.imgRoll_list').mousedown(function(e){
-        // clearInterval(t);//鼠标摁下时清除定时器
+        var leftX = parseInt($(".imgRoll_list").css("left"));
         downX = e.pageX;
-        // alert(leftX);
+
+        // downX = e.offsetX;
+        moveX = downX;
         $('.imgRoll_list').bind('mousemove', function(e) {
+            // moveX = e.offsetX;
             moveX = e.pageX;
             var endX = moveX-downX+leftX;
+            // alert(endX);
             $(".imgRoll_list").css("left",endX);   
         });
     return false;
     });
     $('.imgRoll_list').mouseup(function() {
-        var X = moveX-downX;
-        // alert(X);
-        if(X>=-100&&X<=-20){
+        var distanceX = moveX-downX;
+        if(distanceX>=-100&&distanceX<=-20){
             move();
         }
-        if (X>20&&X<=100) {
+        if (distanceX>20&&distanceX<=100) {
             move();
         }
-        if (X>100) {
-            i--;
-            move(); 
+        if (distanceX>100) {
+            prevItem(); 
         }
-        if (X<-100) {
-            i++;
-            move(); 
+        if (distanceX<-100) {
+            nextItem(); 
         }
         $('.imgRoll_list').unbind('mousemove');
     });
