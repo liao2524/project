@@ -30,16 +30,16 @@ $(document).ready(function () {
 
 
     window.onscroll = function () {
-    var tur = true;
-    var scrollTop=$(window).scrollTop();
-    var contentHeigth = $('#content').height();
-        if (true) {
-            if (scrollCount>=4) {
-                /*$('.loading').hide();
-                $('.loader_Txt').show();  */
-            }else if(scrollTop>contentHeigth-300&&scrollCount<4){
-                setTimeout('divCount(8,1)',1000);
+        var tur = true;
+        var scrollTop=$(window).scrollTop();
+        var contentHeigth = $('#content').height();
+        $('.loading').show();
+        if (tur) {
+            if(scrollTop>contentHeigth-300&&scrollCount<4){
+                setTimeout('divCount(10,1)',1500);
                 scrollCount+=1; 
+            }else if(scrollCount===4){
+                $('.loading').hide();
             }
             $(".allNav_list").css('display', 'none');
             tur = false; 
@@ -48,9 +48,8 @@ $(document).ready(function () {
 
 
     $('.showmore_btn').click(function() {
-        /*$('.loader_Txt').hide();
-        $('.loading').show();*/
-        setTimeout('divCount(16,1)',3000);   
+        $('.loading').show();
+        setTimeout('divCount(10,1)',3000);   
         scrollCount=1;
     });
 });

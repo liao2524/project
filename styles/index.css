@@ -600,10 +600,10 @@ body{background-color: #eee}
     line-height: 100px;
     position: absolute;
 }
-.com_loader .loader_bd {
+.com_loader .loader_Txt {
 	display: none;
 }
-.com_loader .loader_bd {
+.com_loader .loader_Txt {
     font-size: 18px;
     background-color: #FFD700;
     display: inline-block;
@@ -615,11 +615,11 @@ body{background-color: #eee}
 .notext{
 	display: none;
 }
-.com_loader.showmore .loader_bd .showtext {
+.com_loader.showmore .loader_Txt .showtext {
     display: inline-block;
 
 }
-.com_loader .loader_bd .showtext {
+.com_loader .loader_Txt .showtext {
     display: none;
     padding: 15px 50px;
     color: #fff;
